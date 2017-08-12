@@ -1,0 +1,65 @@
+[meta]
+# site title, show in <title>
+title = "veikr的博客"
+
+# subtitle, words after title, in description
+subtitle = "关于web、关于java、关于android"
+
+# print in html <meta>
+keyword = ""
+
+# print in html <meta>
+desc = ""
+
+# build links for feed, sitemap
+domain = "veikr.com"
+
+# root path for site# if empty, build as http://{domain}/
+root = "http://veikr.com/"
+
+# cover page for homepage
+cover = "@media/cover.jpg"
+
+# global language,
+# its used in global posts and themes, unless pages set lang
+lang = "zh"
+
+
+[[nav]]
+link = "/"
+title = "Home"
+i18n = "home"
+# set nav to active status
+hover = "index"
+blank = false
+
+[[nav]]
+link = "/archive"
+title = "Archive"
+i18n = "archive"
+hover = "archive"
+
+[[author]]
+name = "pugo"
+email = ""
+url = "http://pugo.io"
+avatar = "@media/author.png"
+bio = "the robot of pugo, who generates all default contents."
+
+# comment settings
+# please only set one value
+# if multi values, it prints all comment iframes
+[comment]
+# disqus site name
+disqus = ""
+# duoshuo short name
+duoshuo = ""
+
+# analytics settings
+# please only set one value
+# if multi values, it prints all analytics codes
+[analytics]
+# google analytics, need as UA-XXXXX-Y
+google = ""
+# baidu analytics, need hash-code in hm.js?hash-code
+baidu = ""
