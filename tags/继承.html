@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>继承 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content="veikr的博客"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post-tag" data-perma="post-tag-继承">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-list">
+            <h2 class="tag text-center">继承</h2>
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">7</span>
+                            <span class="day">21</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2012/7/21/golang_extend.html">go语言的中&#39;继承&#39;</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>最近看了下go语言，以前都只会java，则开始接触go语言时发现和java实在是有太多太多的不同，还有些不习惯，但慢慢的觉得还是挺有意思的。虽然学go语言感觉好像根本用不上，但多看看别的语言也是不错的。go语言默认是没有继承的，但结构体支持匿名字段，可以利用这个来实现&rdquo;继承&rdquo;。废话不多说，直接上代码，很简单，一看就会。</p>
+
+<p>先大概说下这段代码，看起来会更方便些。</p>
+
+<p>类Human。有2个字段：name,sex。有2个方法：walk，eat。</p>
+
+<p>类SuperMan。有3个字段：Human，name，level。有2个方法：eat，fly。</p>
+
+<p>这是标准说法，但你可以这么理解：SuperMan继承了Human，当然同样继承了所有字段和所有方法。同时又加入了自己的两个字段，其中有一个字段和父类是同名的，另外重写了父类中的一个方法，也添加了自己的一个方法。</p>
+
+<p>代码如下：</p>
+
+<p>&nbsp;
+<pre class="brush:py">package main</p>
+
+<p>import(
+    &ldquo;fmt&rdquo;
+)</p>
+
+<p>type Human struct{
+    name string
+    sex string
+}</p>
+
+<p>func (h Human) Eat(){
+    fmt.Println(&ldquo;Human.Eat:&ldquo;,h)
+}</p>
+
+<p>func (h Human) Walk(){
+    fmt.Println(&ldquo;Human.Walk:&ldquo;,h)
+}</p>
+
+<p>type SuperMan struct{
+    Human
+    name string
+    level int
+}</p>
+
+<p>func (s SuperMan) Eat(){
+    fmt.Println(&ldquo;SuperMan.Eat:&ldquo;,s)
+}</p>
+
+<p>func (s SuperMan) Fly(){
+    fmt.Println(&ldquo;I believe I can fly!&rdquo;,s)
+}</p>
+
+<p>func test(h Human){
+    fmt.Println(&ldquo;test pass!&rdquo;)
+}</p>
+
+<p>func main() {
+    h:=Human{&ldquo;zzp&rdquo;,&ldquo;man&rdquo;}
+    h.Eat()//调用自己的方法
+    h.Walk()//调用自己的方法</p>
+<pre><code>s:=SuperMan{Human{&quot;sm&quot;,&quot;no&quot;},&quot;myname&quot;,99}
+
+fmt.Println(s.name)//myname
+fmt.Println(s.Human.name)//sm
+    fmt.Println(s.sex)//no
+    fmt.Println(s.Human.sex)//no
+
+s.Walk()//调用父类中的方法
+s.Eat()//调用自己重写的父类的方法
+s.Human.Eat()//调用父类中被自己重写的方法，这点比java高级
+s.Fly()//调用自己的方法
+
+test(h)
+//test(s)//导致错误，方法需要Human类型，但传的是SuperMan类型
+test(s.Human)//正确
+</code></pre>
+
+<p>}</pre>
+&nbsp;</p>
+
+<p>代码很简单，自己把代码复制出来运行一下，然后一行行对照着看，很容易就理解了。也没什么好讲的。</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2012/7/21/golang_extend.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="article-pager text-center">
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

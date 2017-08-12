@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>在java中使用dom4j解析带冒号节点的xml文件 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="java_domj_colon_xml">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">5</span>
+                            <span class="day">11</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/5/11/java_domj_colon_xml.html">在java中使用dom4j解析带冒号节点的xml文件</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/dom4j.html">dom4j</a>
+                            
+                            <a class="tag label label-info" href="/tags/java.html">java</a>
+                            
+                            <a class="tag label label-info" href="/tags/xml.html">xml</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p>闲了无聊试试用java搞一个豆瓣的api，一直以为我对dom4j还算有些了解，一般的xml解析应用都还成的。结果，才发现连解析都还没学好。遇到个带冒号的节点，不会搞了。<br/><br/>类似这样<br/><br/><textarea class="code" rows="10" cols="50">
+&lt;entry&gt;
+&lt;db:uid&gt;streamcavee&lt;/db:uid&gt;
+&lt;db:homepage&gt;www.streamcave.com&lt;/db:homepage&gt;
+&lt;entry&gt;
+</textarea><br/><br/>居然不会弄了。<br/>用root.element(&ldquo;db:uid&rdquo;)取出来的总是null<br/><br/>在网上搜出来的文章都是你抄我，我抄你。都郁闷死了。<br/>&hellip;</p>
+
+<!--more-->
+
+<p>闲了无聊试试用java搞一个豆瓣的api，一直以为我对dom4j还算有些了解，一般的xml解析应用都还成的。结果，才发现连解析都还没学好。遇到个带冒号的节点，不会搞了。<br/><br/>类似这样<br/><br/><textarea class="code" rows="10" cols="50">
+&lt;entry&gt;
+&lt;db:uid&gt;streamcavee&lt;/db:uid&gt;
+&lt;db:homepage&gt;www.streamcave.com&lt;/db:homepage&gt;
+&lt;entry&gt;
+</textarea><br/><br/>居然不会弄了。<br/>用root.element(&ldquo;db:uid&rdquo;)取出来的总是null<br/><br/>在网上搜出来的文章都是你抄我，我抄你。都郁闷死了。<br/>为这还忍不住在围脖上暴了粗口。 罪过啊。<br/><br/>其实正确的解析应该是<br/>root.element(&ldquo;uid&rdquo;)这样就行了。<br/>不用管冒号前面的东西。。很简单吧。<br/>但我就纳闷儿了。我不可能没有这样试过啊。  。。见鬼了吧。。</p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

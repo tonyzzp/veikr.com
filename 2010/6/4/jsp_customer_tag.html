@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>jsp中的自定义标签的简单教程 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="jsp_customer_tag">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">4</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/6/4/jsp_customer_tag.html">jsp中的自定义标签的简单教程</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/java.html">java</a>
+                            
+                            <a class="tag label label-info" href="/tags/jsp.html">jsp</a>
+                            
+                            <a class="tag label label-info" href="/tags/tag.html">tag</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e6%95%99%e7%a8%8b.html">教程</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e6%a0%87%e7%ad%be.html">标签</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e8%87%aa%e5%ae%9a%e4%b9%89.html">自定义</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p><p>&nbsp;&nbsp;今天去找工作,我说我用过jstl标签.然后他问我 有没有试过自定义标签.我说没有.后来他说他们会五天内通知我,让我回去准备一下.</p><div style="background-color: rgb(255, 255, 255); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-family: Arial, Verdana, sans-serif; font-size: 12px; line-height: 160%; "><p>上次我们班有个同学找工作,别人问个问题,他不会.回来也不管,结果去笔试又考了这个题&hellip;.悲剧了.</p><p>这次我一定要吸取教训,把问过的几个问题都搞懂了.</p><p>先来看看自定义标签.</p><p><span style="color: rgb(255, 0, 0); "><span style="font-size: larger; ">自定义标签使用方法</span></span></p><p>1、写一个类，继承TagSupport,这个类就是用来处理标签的.</p><p>类里主要有2个方法doStartTag()和doEndTag(),分别对开始闭合标签进行处理</p><p>2、写.tld标签文件</p><p>3、在web.xml中对tld文件进行配置</p><p>&nbsp;</p><p><span style="color: rgb(51, 102, 255); ">废话少说,直接看代码.下面写个显示当前时间的自定义标签</span></p><p>代码比较简单,大家一看就懂.</p><p>&nbsp;</p><p><span style="background-color: rgb(255, 255, 0); ">ShowTime.java</span></p><p>&nbsp;</p><p>package org.zzp.tag;</p><p>&nbsp;</p><p>import java.io.IOException;</p><p>import java.text.SimpleDateFormat;</p><p>import java.util.Date;</p><p>&nbsp;</p><p>import javax.servlet.jsp.JspException;</p><p>import javax.servlet.jsp.JspWriter;</p><p>import javax.servlet.jsp.tagext.TagSupport;</p><p>&nbsp;</p><p>public class ShowTime extends TagSupport {</p><p><span class="Apple-tab-span" style="white-space: pre; ">    </span>private static final long serialVersionUID = 3593807751447286551L;</p><p>&nbsp;</p><p><span class="Apple-tab-span" style="white-space: pre; ">   </span>@Override</p><p><span class="Apple-tab-span" style="white-space: pre; "> </span>public int doEndTag() throws JspException {</p><p><span class="Apple-tab-span" style="white-space: pre; ">       </span>JspWriter out=pageContext.getOut();</p><p><span class="Apple-tab-span" style="white-space: pre; ">       </span>Date date=new Date();</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span>SimpleDateFormat sdf=new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</p><p><span class="Apple-tab-span" style="white-space: pre; ">       </span>try {</p><p><span class="Apple-tab-span" style="white-space: pre; ">         </span>out.println(sdf.format(date));</p><p><span class="Apple-tab-span" style="white-space: pre; ">        </span>} catch (IOException e) {</p><p><span class="Apple-tab-span" style="white-space: pre; ">         </span>// TODO Auto-generated catch block</p><p><span class="Apple-tab-span" style="white-space: pre; ">            </span>e.printStackTrace();</p><p><span class="Apple-tab-span" style="white-space: pre; ">      </span>}</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span>return super.doEndTag();</p><p><span class="Apple-tab-span" style="white-space: pre; ">  </span>}</p><p>&nbsp;</p><p><span class="Apple-tab-span" style="white-space: pre; ">    </span>@Override</p><p><span class="Apple-tab-span" style="white-space: pre; "> </span>public int doStartTag() throws JspException {</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span></p><p><span class="Apple-tab-span" style="white-space: pre; ">      </span>return super.doStartTag();</p><p><span class="Apple-tab-span" style="white-space: pre; ">    </span>}</p><p>}</p><p>&nbsp;</p><p>&nbsp;</p><p><span style="background-color: rgb(255, 255, 0); ">MyTag.tld</span></p><p>&nbsp;</p><p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</p><p>&lt;!DOCTYPE taglib</p><p>PUBLIC &quot;-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN&quot;</p><p>&quot;<a href="http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd&quot;&gt;">http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd&quot;&gt;</a></p><p>&lt;taglib&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; "> </span>&lt;tlib-version&gt;1.0&lt;/tlib-version&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">  </span>&lt;jsp-version&gt;1.0&lt;/jsp-version&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">    </span>&lt;short-name&gt;mytags&lt;/short-name&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">   </span>&lt;tag&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">       </span>&lt;name&gt;time&lt;/name&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span>&lt;tag-class&gt;org.zzp.tag.ShowTime&lt;/tag-class&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">   </span>&lt;/tag&gt;</p><p>&lt;/taglib&gt;</p><p>&nbsp;</p><p><span style="background-color: rgb(255, 255, 0); "><br type="_moz" /></span></p><p><span style="background-color: rgb(255, 255, 0); ">web.xml</span></p><p>&lt;web-app&gt;</p><p>&nbsp;</p><p><span class="Apple-tab-span" style="white-space: pre; "> </span>&lt;jsp-config&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">        </span>&lt;taglib&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">            </span>&lt;taglib-uri&gt;/mytag&lt;/taglib-uri&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">           </span>&lt;taglib-location&gt;/WEB-INF/MyTag.tld&lt;/taglib-location&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span>&lt;/taglib&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">   </span>&lt;/jsp-config&gt;</p><p>&lt;/web-app&gt;</p><p>其中,taglib-location是tld文件的位置</p><p>&nbsp;</p><p><span style="background-color: rgb(255, 255, 0); ">tag.jsp</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</p><p>&nbsp;&nbsp; &nbsp;pageEncoding=&quot;UTF-8&quot;%&gt;</p><p>&lt;%@taglib prefix=&quot;mine&quot; uri=&quot;/mytag&quot; %&gt;</p><p>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;<a href="http://www.w3.org/TR/html4/loose.dtd&quot;&gt;">http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</a></p><p>&lt;html&gt;</p><p>&lt;head&gt;</p><p>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</p><p>&lt;title&gt;Insert title here&lt;/title&gt;</p><p>&lt;/head&gt;</p><p>&lt;body&gt;</p><p>&lt;mine:time&gt;&lt;/mine:time&gt;</p><p>&lt;/body&gt;</p><p>&lt;/html&gt;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>&hellip;</p>
+
+<!--more-->
+
+<p>今天去找工作,我说我用过jstl标签.然后他问我 有没有试过自定义标签.我说没有.后来他说他们会五天内通知我,让我回去准备一下.
+<div style="background-color: #ffffff; font-family: Arial, Verdana, sans-serif; font-size: 12px; line-height: 160%; padding: 5px; margin: 0px;"></p>
+
+<p>上次我们班有个同学找工作,别人问个问题,他不会.回来也不管,结果去笔试又考了这个题&hellip;.悲剧了.</p>
+
+<p>这次我一定要吸取教训,把问过的几个问题都搞懂了.</p>
+
+<p>先来看看自定义标签.</p>
+
+<!--more-->
+
+<p><span style="color: #ff0000;"><span style="font-size: larger;">自定义标签使用方法</span></span></p>
+
+<p>1、写一个类，继承TagSupport,这个类就是用来处理标签的.</p>
+
+<p>类里主要有2个方法doStartTag()和doEndTag(),分别对开始闭合标签进行处理</p>
+
+<p>2、写.tld标签文件</p>
+
+<p>3、在web.xml中对tld文件进行配置</p>
+
+<p><span style="color: #3366ff;">废话少说,直接看代码.下面写个显示当前时间的自定义标签</span></p>
+
+<p>代码比较简单,大家一看就懂.</p>
+
+<p><span style="background-color: #ffff00;">ShowTime.java</span></p>
+
+<p>package org.zzp.tag;</p>
+
+<p>import java.io.IOException;</p>
+
+<p>import java.text.SimpleDateFormat;</p>
+
+<p>import java.util.Date;</p>
+
+<p>import javax.servlet.jsp.JspException;</p>
+
+<p>import javax.servlet.jsp.JspWriter;</p>
+
+<p>import javax.servlet.jsp.tagext.TagSupport;</p>
+
+<p>public class ShowTime extends TagSupport {</p>
+
+<p><span style="white-space: pre;"> </span>private static final long serialVersionUID = 3593807751447286551L;</p>
+
+<p><span style="white-space: pre;"> </span>@Override</p>
+
+<p><span style="white-space: pre;"> </span>public int doEndTag() throws JspException {</p>
+
+<p><span style="white-space: pre;"> </span>JspWriter out=pageContext.getOut();</p>
+
+<p><span style="white-space: pre;"> </span>Date date=new Date();</p>
+
+<p><span style="white-space: pre;"> </span>SimpleDateFormat sdf=new SimpleDateFormat(&ldquo;yyyy-MM-dd HH:mm:ss&rdquo;);</p>
+
+<p><span style="white-space: pre;"> </span>try {</p>
+
+<p><span style="white-space: pre;"> </span>out.println(sdf.format(date));</p>
+
+<p><span style="white-space: pre;"> </span>} catch (IOException e) {</p>
+
+<p><span style="white-space: pre;"> </span>// TODO Auto-generated catch block</p>
+
+<p><span style="white-space: pre;"> </span>e.printStackTrace();</p>
+
+<p><span style="white-space: pre;"> </span>}</p>
+
+<p><span style="white-space: pre;"> </span>return super.doEndTag();</p>
+
+<p><span style="white-space: pre;"> </span>}</p>
+
+<p><span style="white-space: pre;"> </span>@Override</p>
+
+<p><span style="white-space: pre;"> </span>public int doStartTag() throws JspException {</p>
+
+<p><span style="white-space: pre;"> </span></p>
+
+<p><span style="white-space: pre;"> </span>return super.doStartTag();</p>
+
+<p><span style="white-space: pre;"> </span>}</p>
+
+<p>}</p>
+
+<p><span style="background-color: #ffff00;">MyTag.tld</span></p>
+
+<p>&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo; ?&gt;</p>
+
+<p>&lt;!DOCTYPE taglib</p>
+
+<p>PUBLIC &ldquo;-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN&rdquo;</p>
+
+<p>&ldquo;<a href="http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd&quot;&gt;">http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd&quot;&gt;</a></p>
+
+<p>&lt;taglib&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;tlib-version&gt;1.0&lt;/tlib-version&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;jsp-version&gt;1.0&lt;/jsp-version&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;short-name&gt;mytags&lt;/short-name&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;tag&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;name&gt;time&lt;/name&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;tag-class&gt;org.zzp.tag.ShowTime&lt;/tag-class&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;/tag&gt;</p>
+
+<p>&lt;/taglib&gt;</p>
+
+<p><span style="background-color: #ffff00;">
+</span></p>
+
+<p><span style="background-color: #ffff00;">web.xml</span></p>
+
+<p>&lt;web-app&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;jsp-config&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;taglib&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;taglib-uri&gt;/mytag&lt;/taglib-uri&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;taglib-location&gt;/WEB-INF/MyTag.tld&lt;/taglib-location&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;/taglib&gt;</p>
+
+<p><span style="white-space: pre;"> </span>&lt;/jsp-config&gt;</p>
+
+<p>&lt;/web-app&gt;</p>
+
+<p>其中,taglib-location是tld文件的位置</p>
+
+<p><span style="background-color: #ffff00;">tag.jsp</span></p>
+
+<p>&lt;%@ page language=&ldquo;java&rdquo; contentType=&ldquo;text/html; charset=UTF-8&rdquo;</p>
+
+<p>pageEncoding=&ldquo;UTF-8&rdquo;%&gt;</p>
+
+<p>&lt;%@taglib prefix=&ldquo;mine&rdquo; uri=&ldquo;/mytag&rdquo; %&gt;</p>
+
+<p>&lt;!DOCTYPE html PUBLIC &ldquo;-//W3C//DTD HTML 4.01 Transitional//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/html4/loose.dtd&quot;&gt;">http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</a></p>
+
+<p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;</p>
+
+<p>&lt;meta http-equiv=&ldquo;Content-Type&rdquo; content=&ldquo;text/html; charset=UTF-8&rdquo;&gt;</p>
+
+<p>&lt;title&gt;Insert title here&lt;/title&gt;</p>
+
+<p>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;</p>
+
+<p>&lt;mine:time&gt;&lt;/mine:time&gt;</p>
+
+<p>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+
+<p></div></p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

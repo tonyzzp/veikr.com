@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>用java输出一个菱形 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="java_rhombus">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">9</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/6/9/java_rhombus.html">用java输出一个菱形</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/java.html">java</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e5%9b%be%e5%bd%a2.html">图形</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e8%8f%b1%e5%bd%a2.html">菱形</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e8%be%93%e5%87%ba.html">输出</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p>在学编程的循环语句时经常会遇到要输出一个特定规则图形的题目,不管是什么语言,几乎都有这样的题目.<br />今天去公司笔试,也遇到了这样的题目,写了好长时间,写出来了,考官也没有认真看,只是说出这道题只是考一下循环语句.<br />回来后我又试了下,写的程序有些问题,然后又小小改进了一下,可以了.<br />代码如下.</p><p><span style="color: rgb(51, 102, 255); "><span style="font-size: large; ">用java输出一个菱形</span></span></p>...
+
+
+<!--more-->
+
+<p>在学编程的循环语句时经常会遇到要输出一个特定规则图形的题目,不管是什么语言,几乎都有这样的题目.<br />今天去公司笔试,也遇到了这样的题目,写了好长时间,写出来了,考官也没有认真看,只是说出这道题只是考一下循环语句.<br />回来后我又试了下,写的程序有些问题,然后又小小改进了一下,可以了.<br />代码如下.</p><p><span style="color: rgb(51, 102, 255); "><span style="font-size: large; ">用java输出一个菱形</span></span></p><p><p>package org.zzp.test;</p><p>&nbsp;</p><p>public class PrintRhombus {</p><p><span class="Apple-tab-span" style="white-space:pre"> </span>public static void main(String[] args) {</p><p><span class="Apple-tab-span" style="white-space:pre">     </span>int n=4;</p><p><span class="Apple-tab-span" style="white-space:pre">     </span>for(int i=0;i&lt;9;i++){</p><p><span class="Apple-tab-span" style="white-space:pre">         </span>for(int j=0;j&lt;Math.abs(n);j++){</p><p><span class="Apple-tab-span" style="white-space:pre">               </span>System.out.print(&quot; &quot;);</p><p><span class="Apple-tab-span" style="white-space:pre">         </span>}</p><p><span class="Apple-tab-span" style="white-space:pre">            </span>for(int j=0;j&lt;9-2*Math.abs(n);j++){</p><p><span class="Apple-tab-span" style="white-space:pre">               </span>System.out.print(&quot;*&quot;);</p><p><span class="Apple-tab-span" style="white-space:pre">         </span>}</p><p><span class="Apple-tab-span" style="white-space:pre">            </span>for(int j=0;j&lt;Math.abs(n);j++){</p><p><span class="Apple-tab-span" style="white-space:pre">               </span>System.out.print(&quot; &quot;);</p><p><span class="Apple-tab-span" style="white-space:pre">         </span>}</p><p><span class="Apple-tab-span" style="white-space:pre">            </span>System.out.println();</p><p><span class="Apple-tab-span" style="white-space:pre">                </span>n--;</p><p><span class="Apple-tab-span" style="white-space:pre">     </span>}</p><p><span class="Apple-tab-span" style="white-space:pre">    </span>}</p><p>}</p></p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

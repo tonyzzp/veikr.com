@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>php文件上传 [function.move-uploaded-file]: failed to open stream 错误解决办法 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="php_upload_function_move_uploaded_file_failed_open_stream">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">4</span>
+                            <span class="day">23</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/4/23/php_upload_function_move_uploaded_file_failed_open_stream.html">php文件上传 [function.move-uploaded-file]: failed to open stream 错误解决办法</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/php.html">php</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0.html">文件上传</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e9%94%99%e8%af%af.html">错误</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p>php文件上传中出现如下错误Warning: move_uploaded_file(upload/pal4bz111.jpg) [function.move-uploaded-file]: failed to open stream: No such file or directory inE:\Eclipse\Workspace\PHPTest\file_upload\t2.php on line 24 Warning: move_uploaded_file() [function.move-uploaded-file]: Unable to move &rsquo;D:\xampplite\tmp\php7FC5.tmp&rsquo; to &lsquo;upload/pal4bz111.jpg&rsquo; inE:\Eclipse\Workspace\PHPTest\file_upload\t2.php on line 24 Stored in: upload/pal4bz111.jpg</p>
+
+<!--more-->
+
+<p>php文件上传中出现如下错误 </p>  <p>&#160;</p>  <p><b>Warning</b>: move_uploaded_file(upload/pal4bz111.jpg) [function.move-uploaded-file]: failed to open stream: No such file or directory in<b>E:\Eclipse\Workspace\PHPTest\file_upload\t2.php</b> on line <b>24</b>     <br /><b>Warning</b>: move_uploaded_file() [function.move-uploaded-file]: Unable to move 'D:\xampplite\tmp\php7FC5.tmp' to 'upload/pal4bz111.jpg' in<b>E:\Eclipse\Workspace\PHPTest\file_upload\t2.php</b> on line <b>24</b>     <br />Stored in: upload/pal4bz111.jpg</p>  <p>&#160;</p>  <p>解决办法</p>  <p>将</p>  <p>move_uploaded_file($_FILES[&quot;file&quot;][&quot;tmp_name&quot;],&quot;<font color="#ff0000">upload/</font>&quot; . $_FILES[&quot;file&quot;][&quot;name&quot;])</p>  <p>改为</p>  <p>move_uploaded_file($_FILES[&quot;file&quot;][&quot;tmp_name&quot;],&quot;<font color="#ff0000">d:/</font>&quot; . $_FILES[&quot;file&quot;][&quot;name&quot;])</p>  <p>&#160;</p>  <p>注：windows环境</p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

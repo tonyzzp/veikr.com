@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Page 16 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content="veikr的博客"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post-list" data-perma="post-page-16">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-list">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">4</span>
+                            <span class="day">23</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/4/23/ie_button_bug.html">ie里的button标签的一个bug</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>做毕业设计的时候，偶像间发现了ie的button标签的一个bug </p>  <p>原始的按钮我们这样写</p>  <p>&lt;input type=”button” id=”button_id” value=”值” /&gt;&#160;&#160;&#160; </p>  <p>这个按钮是value也是按钮上显示的文字 </p>  <p>而新的button标签是这样定义按钮的</p>  <p>&lt;button id=”button_id” value=”值”&gt;这是按钮&lt;/button&gt;</p>  <p>这个按钮的值和按钮上显示的文字是独立的 </p>  <p>但是ie却有个bug</p>  <p>在用button定义一个按钮的时候，取这个元素的值，取到的却是按钮上显示的文字，也就是“这是按钮”，而正确的值应该是“值”</p>  <p>firefox、chrome都没有这个问题。 </p>  <p>另外，我用的是jquery的$(“#button_id”).val()取的值，没有用原始的js取。不知道会不会不一样呢.. </p>  <p>希望ie再能对标准支持的好一点。这样能为网页开发人员省正好多事啊，也不用每做个东西，就要开几个浏览器去测试了。。悲哀。。</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/4/23/ie_button_bug.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">4</span>
+                            <span class="day">23</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/4/23/eclipse_tomcat_setting_property_source_org_eclipse_jst_jee_server.html">eclipse下启动tomcat出现Setting property &#39;source&#39; to &#39;org.eclipse.jst.jee.server: &#39;错误的解决办法</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>在eclipse中启动tomcat时出现Setting property &lsquo;source&rsquo; to &lsquo;org.eclipse.jst.jee.server:你的站点名&rsquo;   did not find a matching property警告</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/4/23/eclipse_tomcat_setting_property_source_org_eclipse_jst_jee_server.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">4</span>
+                            <span class="day">23</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/4/23/php_upload_function_move_uploaded_file_failed_open_stream.html">php文件上传 [function.move-uploaded-file]: failed to open stream 错误解决办法</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>php文件上传中出现如下错误Warning: move_uploaded_file(upload/pal4bz111.jpg) [function.move-uploaded-file]: failed to open stream: No such file or directory inE:\Eclipse\Workspace\PHPTest\file_upload\t2.php on line 24 Warning: move_uploaded_file() [function.move-uploaded-file]: Unable to move &rsquo;D:\xampplite\tmp\php7FC5.tmp&rsquo; to &lsquo;upload/pal4bz111.jpg&rsquo; inE:\Eclipse\Workspace\PHPTest\file_upload\t2.php on line 24 Stored in: upload/pal4bz111.jpg</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/4/23/php_upload_function_move_uploaded_file_failed_open_stream.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">4</span>
+                            <span class="day">23</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/4/23/jquery_val_bug.html">发现jquery的val()方法的一个bug（待验证）</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>jquery的val()方法：返回元素的值，也就是value属性</p>  <p>比如</p>  <p>&lt;input id=”acct” type=”text” value=”我是值” /&gt;</p>  <p>则$(“#id”).val() 得到的结果应该是&#160; ”我是值“</p>  <p>这也相当于.aatr(“value”)方法。。</p>  <p>&#160;</p>  <p>但是今天发现一个bug</p>  <p>&lt;li id=”idid’ value=”值”&gt;石沉溪的博客<a href="http://www.cnblogs.com/tonyzzp">http://www.cnblogs.com/tonyzzp</a> &lt;/li&gt;</p>  <p>通过$(“idid”).val()却得不到值。</p>  <p>但通过.attr(“value”)可以。</p>  <p>在ie8&#160;&#160; firefox3.5&#160;&#160; chrome5&#160; 中测试 都是这样。。</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/4/23/jquery_val_bug.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="article-pager text-center">
+                <a class="btn btn-lg btn-info" href="/posts/15.html">更新的</a>
+                <a class="btn btn-lg btn-info" href="/posts/17.html">以前的</a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

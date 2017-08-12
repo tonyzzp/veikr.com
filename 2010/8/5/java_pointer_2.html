@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Java中的指针(二) - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="java_pointer_2">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">8</span>
+                            <span class="day">5</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/8/5/java_pointer_2.html">Java中的指针(二)</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/java.html">java</a>
+                            
+                            <a class="tag label label-info" href="/tags/pointer.html">pointer</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p>本文摘要:接着上次的来,讲java中的指针.上篇文章中举了个例子,把某对象存入session,再取出来,改变其中的变量值,那么不需要再进行session.setAttribute,但是session中的对象也已经跟着改变了.这次再举个例子,是list<br/>直接看代码<br/><br/><br/>User.java<br/>[code=java]<br/>package test;<br/><br/>public class User implements Cloneable {<br/>    private int id;<br/>    private String name;<br/>&hellip;</p>
+
+<!--more-->
+
+<p>本文摘要:接着上次的来,讲java中的指针.上篇文章中举了个例子,把某对象存入session,再取出来,改变其中的变量值,那么不需要再进行session.setAttribute,但是session中的对象也已经跟着改变了.这次再举个例子,是list
+直接看代码</p>
+
+<p><span style="color: #3366ff;">User.java</span></p>
+
+<p>package test;</p>
+
+<p>public class User implements Cloneable {
+private int id;
+private String name;
+private int age;</p>
+
+<p>public User(){</p>
+
+<p>}</p>
+
+<p>public User(int id,String name,int age){
+this.id=id;
+this.name=name;
+this.age=age;
+}</p>
+
+<!--more-->
+
+<p>public int getId() {
+return id;
+}
+public void setId(int id) {
+this.id = id;
+}
+public String getName() {
+return name;
+}
+public void setName(String name) {
+this.name = name;
+}
+public int getAge() {
+return age;
+}
+public void setAge(int age) {
+this.age = age;
+}</p>
+
+<p>public String toString(){
+return &ldquo;{id:&ldquo;+id+&rdquo;,name:&ldquo;+name+&rdquo;,age:&ldquo;+age+&rdquo;}&ldquo;;
+}</p>
+
+<p>@Override
+public Object clone() throws CloneNotSupportedException {
+return super.clone();
+}
+}</p>
+
+<p><span style="color: #3366ff;">ListDemo.java</span></p>
+
+<p>package test;</p>
+
+<p>import java.util.ArrayList;
+import java.util.List;</p>
+
+<p>public class ListDemo {
+public static void main(String[] args) {
+List list=new ArrayList();
+for(int i=0;i&lt;3;i++){
+User u=new User(i,&ldquo;第&rdquo;+i+&ldquo;号&rdquo;,20+i);
+list.add(u);
+}
+System.out.println(list);
+for(User u:list){
+u.setName(&ldquo;一样的名字&rdquo;);
+}
+System.out.println(list);
+}
+}</p>
+
+<p>执行结果是什么呢?.
+你肯定已经猜到了.
+[{id:0,name:第0号,age:20}, {id:1,name:第1号,age:21}, {id:2,name:第2号,age:22}]
+[{id:0,name:一样的名字,age:20}, {id:1,name:一样的名字,age:21}, {id:2,name:一样的名字,age:22}]</p>
+
+<p>再下一次中,将会更深一步讲解java中的探针.
+文章写的不好,班门弄斧了,高手莫笑.</p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

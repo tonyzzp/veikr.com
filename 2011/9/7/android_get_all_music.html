@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>得到所有音乐 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="android_get_all_music">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">9</span>
+                            <span class="day">7</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2011/9/7/android_get_all_music.html">得到所有音乐</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/contentprovider.html">contentprovider</a>
+                            
+                            <a class="tag label label-info" href="/tags/contentresolver.html">contentresolver</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e9%9f%b3%e4%b9%90.html">音乐</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p>在做android音乐播放器吗？还在扫描目录吗？</p>
+
+<p>不需要啦，直接可以通过系统接口得到手机内的所有音乐哦。</p>
+
+<p>而且会帮你解析好id3歌曲信息</p>
+
+<p><!--more-->contentProvider是个好东西，有什么需要和其他程序共享的，都可以借助这个实现</p>
+
+<p>音乐也不例外</p>
+
+<p>手机开机时会有提示正在扫描媒体，然后扫描完成后还会发送一个media_scanner_finished广播来通知你</p>
+
+<p>然后就可以直接查询到所有音乐信息了，使用contentResolver实现</p>
+
+<p>很简单很简单，但我之前网上找了好久都没找到，这次无意中发现一段代码，拿出来共享一下</p>
+
+<p>直接贴代码了。
+<pre class="brush:java">        class Music {
+            String title, art, album;
+            long length;</p>
+<pre><code>        public String toString() {
+            return &quot;{title:&quot; + title + &quot;,art:&quot; + art + &quot;,album:&quot; + album
+                    + &quot;,length:&quot; + length + &quot;}&quot;;
+        }
+    }
+
+    List&amp;lt;Music&amp;gt; list = new ArrayList&amp;lt;Music&amp;gt;();
+
+    Context ctx = getContext();
+    ContentResolver cr = ctx.getContentResolver();
+    Cursor c = cr.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null,
+            null, null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
+    while (c.moveToNext()) {
+        Music music = new Music();
+        music.title = c.getString(c
+                .getColumnIndex(MediaStore.Audio.AudioColumns.TITLE));
+        music.art = c.getString(c
+                .getColumnIndex(MediaStore.Audio.AudioColumns.ARTIST));
+        music.album = c.getString(c
+                .getColumnIndex(MediaStore.Audio.AudioColumns.ALBUM));
+        music.length = c.getLong(c
+                .getColumnIndex(MediaStore.MediaColumns.SIZE));
+        list.add(music);
+    }
+    for (Music m : list) {
+        System.out.println(m);
+    }&lt;/pre&gt;
+</code></pre>
+
+<p>好了，全部完工。</p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

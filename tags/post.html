@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>post - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content="veikr的博客"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post-tag" data-perma="post-tag-post">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-list">
+            <h2 class="tag text-center">post</h2>
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">3</span>
+                            <span class="day">24</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2012/3/24/java_http_get_post_multi_file_upload.html">java的http请求(get/post/上传文件)(附源码下载)</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>使用标准http协议实现，(HttpUrlConneciton)，不使用第三方包
+<div></div>
+<div><span style="color: #ff0000;">一、get请求</span></div>
+<div>URL url=new URL(&ldquo;<a href="http://www.baidu.com/s?wd=abcdefg&quot;">http://www.baidu.com/s?wd=abcdefg&quot;</a>);</div>
+<div>HttpURLConnection conn = (HttpURLConnection) url.openConnection();</div>
+<div>InputStream is = conn.getInputStream();</div>
+<div>is.read(&hellip;..</div>
+<div></div>
+<div></div>
+<div><span style="color: #ff0000;">二、简单post请求</span></div>
+<div>只需要将参数用 &amp; 和 = 连接，然后用流写出去就行了。</div>
+<div>
+<div>URL url=new URL(&ldquo;<a href="http://www.baidu.com/s&quot;">http://www.baidu.com/s&quot;</a>);</div>
+<div>HttpURLConnection conn = (HttpURLConnection) url.openConnection();</div>
+<div>conn.setDoInput(true);</div>
+<div>conn.setDoOutput(true);</div>
+<div>OutputStream out=conn.getOutputStream();</div>
+<div>out.write(&ldquo;wd=abcdefg&amp;wd2=hijklmn&rdquo;.getBytes());</div>
+<div>out.flush();</div>
+<div>out.close();</div>
+<div>InputStream is = conn.getInputStream();</div>
+<div>is.read(&hellip;..</div>
+</div>
+<div></div>
+<div><span style="color: #ff0000;">三、上传多文件</span></div>
+<div>比如实现如下请求</div>
+<div>参数：</div>
+<div>name=zzp</div>
+<div>age=23</div>
+<div></div>
+<div>文件：</div>
+<div>icon=new File(file1);</div>
+<div>music=new File(audio);</div>
+<div></div>
+<div>需要向服务器发送的数据如下：</div>
+<div>首先需要定义一个boundary，一个随机字符串即可，但整个请求过程中需要是一致的。</div>
+<div>BOUNDARY=&ldquo;abcdefg&rdquo;;</div>
+<div>首先需要</div>
+<div>conn.setRequestProperty(&ldquo;Content-Type&rdquo;,&ldquo;multipart/form-data;boundary=abcdefg&rdquo;);</div>
+<div></div>
+<div>全部数据请求如下(包括内容中的引号。包括所有换行与空行，换行符是\r\n)(两个横线之间的是需要发送的全部内容):</div>
+<div>排版很麻烦。。换行总是被去掉，所以以下用[\r\n]表示换行，程序中直接往流里写\r\n就行了。</div></p>
+
+<hr />
+
+<div>--abcdefg[\r\n]</div>
+<div>Content-Disposition:form-data;name="name"[\r\n]</div>
+<div>[\r\n]</div>
+<div>zzp[\r\n]</div>
+<div>--abcdefg[\r\n]</div>
+<div>Content-Disposition:form-data;name="age"[\r\n]</div>
+<div>[\r\n]</div>
+<div>23[\r\n]</div>
+<div>--abcdefg[\r\n]</div>
+<div>Content-Disposition:form-data;name="icon";filename="file1其实这个是随便的"[\r\n]</div>
+<div>Content-Type:image/png[\r\n]</div>
+<div>[\r\n]</div>
+<div>file1.getBytes()[\r\n]</div>
+<div>--abcdefg[\r\n]</div>
+<div>Content-Disposition:form-data;name="music";filename="mymusic.mp3"[\r\n]</div>
+<div>Content-Type:audio/mpeg[\r\n]</div>
+<div>[\r\n]</div>
+<div>audio.getBytes()[\r\n]</div>
+<div>--abcdefg--</div>
+<div>
+
+<hr />
+
+</div>
+<div>源码下载：</div>
+<div><a href="http://veikr.com/wp-content/uploads/2012/03/zzpCommon.zip">zzpCommon</a></div>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2012/3/24/java_http_get_post_multi_file_upload.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="article-pager text-center">
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

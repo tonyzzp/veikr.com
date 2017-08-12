@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Page 12 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content="veikr的博客"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post-list" data-perma="post-page-12">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-list">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">9</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/6/9/java_properties_example.html">java中操作properties属性文件的简单教程</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p><p>java中常会用到properties文件作为配置文件,可以很容易的读取和设置,来对工程进行一些配置.<br>今天去公司笔试,考了这题,一点儿不会.我完全是按最原始的方法去读文件,写的.回来后在网上搜了下,感觉还是比较简单的,在这儿献个丑.</p> <p><font color="#0080ff" size="4">prop.properties文件</font></p> <p>name=许嵩<br>age=21  <p><font color="#0080ff" size="4">TestProp.java文件</font></p><pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">package</span> org.zzp.test;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">import</span> java.io.FileInputStream;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">import</span> java.io.FileOutputStream;</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">import</span> java.io.UnsupportedEncodingException;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">import</span> java.util.Enumeration;</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">import</span> java.util.Properties;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> TestProp {</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">   <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> String get(String s){</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      String result=<span style="color: #0000ff">null</span>;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      <span style="color: #0000ff">try</span> {</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         result=<span style="color: #0000ff">new</span> String(s.getBytes(&rdquo;<span style="color: #8b0000">ISO_8859_1</span>&rdquo;),&rdquo;<span style="color: #8b0000">UTF-8</span>&rdquo;);</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      } <span style="color: #0000ff">catch</span> (UnsupportedEncodingException e) {</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         e.printStackTrace();</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      }</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      <span style="color: #0000ff">return</span> result;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">   }</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">   </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">   @SuppressWarnings(&rdquo;<span style="color: #8b0000">unchecked</span>&rdquo;)</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">   <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> main(String[] args) {</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      Properties prop=<span style="color: #0000ff">new</span> Properties();</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      <span style="color: #0000ff">try</span> {</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         FileInputStream fis=<span style="color: #0000ff">new</span> FileInputStream(&rdquo;<span style="color: #8b0000">prop.properties</span>&rdquo;);</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         prop.load(fis);</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         Enumeration names=prop.propertyNames();</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         <span style="color: #0000ff">while</span>(names.hasMoreElements()){</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">            String name=(String)names.nextElement();</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">            System.out.print(name);</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">            System.out.println(&rdquo;<span style="color: #8b0000">:</span>&rdquo;+get(prop.getProperty(name)));</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         }</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         prop.put(&rdquo;<span style="color: #8b0000">sex</span>&rdquo;, &ldquo;<span style="color: #8b0000">男</span>&rdquo;);</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         prop.store(<span style="color: #0000ff">new</span> FileOutputStream(&rdquo;<span style="color: #8b0000">out.txt</span>&rdquo;), &ldquo;<span style="color: #8b0000">commet</span>&rdquo;);</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      } <span style="color: #0000ff">catch</span> (Exception e) {</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">         e.printStackTrace();</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">      }</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">   }</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">}</pre></pre><pre>
+程序中,读取prop.properties文件,打印中其中的所有属性.然后增加了一个属性.再把配置写入到另一个文件中.<br>如果要修改其中一个属性的话,也很简单.只用prop.setProperty(“key”,”value”);就可以了</pre><pre>&nbsp;</pre></p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/6/9/java_properties_example.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">9</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/6/9/java_rhombus.html">用java输出一个菱形</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p><p>在学编程的循环语句时经常会遇到要输出一个特定规则图形的题目,不管是什么语言,几乎都有这样的题目.<br />今天去公司笔试,也遇到了这样的题目,写了好长时间,写出来了,考官也没有认真看,只是说出这道题只是考一下循环语句.<br />回来后我又试了下,写的程序有些问题,然后又小小改进了一下,可以了.<br />代码如下.</p><p><span style="color: rgb(51, 102, 255); "><span style="font-size: large; ">用java输出一个菱形</span></span></p>&hellip;</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/6/9/java_rhombus.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">8</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/6/8/iframe_auto_fit_height.html">iframe自适应高度(适合IE firefox  opera)</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>做有些网页的时候用frameset会很方便,但是frameset很影响速度,而且还很不美观,并且seo也不好.所以用iframe还是比较好的选择.   <br />后来看到QQ空间个人中心也用的iframe,很漂亮.很好用.于是也试着用iframe.但是自适应高度很是个问题.不同的游戏器都会不一样,说到这儿我要再深深的BS一下IE..    <br />做了很多尝试,在网上看了很久,做了下小小的总结.希望对大家有帮助</p><p><font color="#ff0000" size="5">怎么获取网页的高度</font></p><p><font color="#0080ff" size="4">对于IE(我用的IE8,IE6就不知道行不行了)</font></p><p><font color="#000000" size="4">document.getElementById(&ldquo;myframe&rdquo;).Document.body.scrollHeight;</font></p><p><font color="#0080ff" size="4">对于其他浏览器(firefox&nbsp; opera)</font></p><p><font color="#000000" size="4">document.getElementById(&ldquo;myframe&rdquo;).contentDocument.body.scrollHeight;</font></p><p><font color="#0080ff" size="4">共用方法(IE8&nbsp; firefox&nbsp; opera)</font></p><p><font color="#000000" size="4">document.getElementById(&ldquo;myframe&rdquo;).contentWindow.document.body.scrollHeight;</font></p><p>&nbsp;</p><p><font color="#0080ff" size="4">代码</font></p><pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">&lt;</span><span style="color: #800000">html</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2: <span style="color: #0000ff">&lt;</span><span style="color: #800000">head</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3: <span style="color: #0000ff">&lt;</span><span style="color: #800000">title</span><span style="color: #0000ff">&gt;</span>iframe自适应高度<span style="color: #0000ff">&lt;/</span><span style="color: #800000">title</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4: <span style="color: #0000ff">&lt;</span><span style="color: #800000">script</span> <span style="color: #ff0000">type</span>=<span style="color: #0000ff">&quot;text/javascript&quot;</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5: function change(){</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6: var o=document.getElementById(&quot;myframe&quot;);</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7: var height= o.contentWindow.document.body.scrollHeight;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  8: o.height=height;</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  9: }</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 10: </pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 11: function show(){</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 12: var o=document.getElementById(&quot;myframe&quot;);</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 13: alert(o.contentWindow.document.body.scrollHeight);</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 14: }</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 15: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">script</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 16: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">head</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 17: <span style="color: #0000ff">&lt;</span><span style="color: #800000">body</span> <span style="color: #ff0000">onresize</span>=<span style="color: #0000ff">&quot;change()&quot;</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 18: <span style="color: #0000ff">&lt;</span><span style="color: #800000">div</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 19: <span style="color: #0000ff">&lt;</span><span style="color: #800000">button</span> <span style="color: #ff0000">onclick</span>=<span style="color: #0000ff">&quot;document.getElementById('myframe').src='article.html'&quot;</span><span style="color: #0000ff">&gt;</span>日志<span style="color: #0000ff">&lt;/</span><span style="color: #800000">button</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 20: <span style="color: #0000ff">&lt;</span><span style="color: #800000">button</span> <span style="color: #ff0000">onclick</span>=<span style="color: #0000ff">&quot;document.getElementById('myframe').src='pic.html'&quot;</span><span style="color: #0000ff">&gt;</span>图片<span style="color: #0000ff">&lt;/</span><span style="color: #800000">button</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 21: <span style="color: #0000ff">&lt;</span><span style="color: #800000">button</span> <span style="color: #ff0000">onclick</span>=<span style="color: #0000ff">&quot;show()&quot;</span><span style="color: #0000ff">&gt;</span>显示高度<span style="color: #0000ff">&lt;/</span><span style="color: #800000">button</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 22: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">div</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 23: <span style="color: #0000ff">&lt;</span><span style="color: #800000">iframe</span> <span style="color: #ff0000">frameBorder</span>=<span style="color: #0000ff">&quot;1&quot;</span> <span style="color: #ff0000">scrolling</span>=<span style="color: #0000ff">&quot;no&quot;</span> <span style="color: #ff0000">id</span>=<span style="color: #0000ff">&quot;myframe&quot;</span> <span style="color: #ff0000">width</span>=<span style="color: #0000ff">&quot;50%&quot;</span> <span style="color: #ff0000">src</span>=<span style="color: #0000ff">&quot;article.html&quot;</span> <span style="color: #ff0000">onload</span>=<span style="color: #0000ff">&quot;change()&quot;</span><span style="co
+lor: #0000ff">&gt;</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">iframe</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 24: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">body</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 25: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">html</span><span style="color: #0000ff">&gt;</span></pre></pre><p>&nbsp;</p><p><font color="#ff0000" size="4">注:</font></p><p><font color="#000000" size="4">我用的浏览器版本</font></p><p><font color="#000000" size="4">IE8&nbsp;&nbsp; firefox3.5&nbsp;&nbsp; opera10.05</font></p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/6/8/iframe_auto_fit_height.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">4</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/6/4/jsp_customer_tag.html">jsp中的自定义标签的简单教程</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p><p>&nbsp;&nbsp;今天去找工作,我说我用过jstl标签.然后他问我 有没有试过自定义标签.我说没有.后来他说他们会五天内通知我,让我回去准备一下.</p><div style="background-color: rgb(255, 255, 255); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-family: Arial, Verdana, sans-serif; font-size: 12px; line-height: 160%; "><p>上次我们班有个同学找工作,别人问个问题,他不会.回来也不管,结果去笔试又考了这个题&hellip;.悲剧了.</p><p>这次我一定要吸取教训,把问过的几个问题都搞懂了.</p><p>先来看看自定义标签.</p><p><span style="color: rgb(255, 0, 0); "><span style="font-size: larger; ">自定义标签使用方法</span></span></p><p>1、写一个类，继承TagSupport,这个类就是用来处理标签的.</p><p>类里主要有2个方法doStartTag()和doEndTag(),分别对开始闭合标签进行处理</p><p>2、写.tld标签文件</p><p>3、在web.xml中对tld文件进行配置</p><p>&nbsp;</p><p><span style="color: rgb(51, 102, 255); ">废话少说,直接看代码.下面写个显示当前时间的自定义标签</span></p><p>代码比较简单,大家一看就懂.</p><p>&nbsp;</p><p><span style="background-color: rgb(255, 255, 0); ">ShowTime.java</span></p><p>&nbsp;</p><p>package org.zzp.tag;</p><p>&nbsp;</p><p>import java.io.IOException;</p><p>import java.text.SimpleDateFormat;</p><p>import java.util.Date;</p><p>&nbsp;</p><p>import javax.servlet.jsp.JspException;</p><p>import javax.servlet.jsp.JspWriter;</p><p>import javax.servlet.jsp.tagext.TagSupport;</p><p>&nbsp;</p><p>public class ShowTime extends TagSupport {</p><p><span class="Apple-tab-span" style="white-space: pre; ">    </span>private static final long serialVersionUID = 3593807751447286551L;</p><p>&nbsp;</p><p><span class="Apple-tab-span" style="white-space: pre; ">   </span>@Override</p><p><span class="Apple-tab-span" style="white-space: pre; "> </span>public int doEndTag() throws JspException {</p><p><span class="Apple-tab-span" style="white-space: pre; ">       </span>JspWriter out=pageContext.getOut();</p><p><span class="Apple-tab-span" style="white-space: pre; ">       </span>Date date=new Date();</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span>SimpleDateFormat sdf=new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</p><p><span class="Apple-tab-span" style="white-space: pre; ">       </span>try {</p><p><span class="Apple-tab-span" style="white-space: pre; ">         </span>out.println(sdf.format(date));</p><p><span class="Apple-tab-span" style="white-space: pre; ">        </span>} catch (IOException e) {</p><p><span class="Apple-tab-span" style="white-space: pre; ">         </span>// TODO Auto-generated catch block</p><p><span class="Apple-tab-span" style="white-space: pre; ">            </span>e.printStackTrace();</p><p><span class="Apple-tab-span" style="white-space: pre; ">      </span>}</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span>return super.doEndTag();</p><p><span class="Apple-tab-span" style="white-space: pre; ">  </span>}</p><p>&nbsp;</p><p><span class="Apple-tab-span" style="white-space: pre; ">    </span>@Override</p><p><span class="Apple-tab-span" style="white-space: pre; "> </span>public int doStartTag() throws JspException {</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span></p><p><span class="Apple-tab-span" style="white-space: pre; ">      </span>return super.doStartTag();</p><p><span class="Apple-tab-span" style="white-space: pre; ">    </span>}</p><p>}</p><p>&nbsp;</p><p>&nbsp;</p><p><span style="background-color: rgb(255, 255, 0); ">MyTag.tld</span></p><p>&nbsp;</p><p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</p><p>&lt;!DOCTYPE taglib</p><p>PUBLIC &quot;-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN&quot;</p><p>&quot;<a href="http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd&quot;&gt;">http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd&quot;&gt;</a></p><p>&lt;taglib&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; "> </span>&lt;tlib-version&gt;1.0&lt;/tlib-version&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">  </span>&lt;jsp-version&gt;1.0&lt;/jsp-version&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">    </span>&lt;short-name&gt;mytags&lt;/short-name&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">   </span>&lt;tag&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">       </span>&lt;name&gt;time&lt;/name&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span>&lt;tag-class&gt;org.zzp.tag.ShowTime&lt;/tag-class&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">   </span>&lt;/tag&gt;</p><p>&lt;/taglib&gt;</p><p>&nbsp;</p><p><span style="background-color: rgb(255, 255, 0); "><br type="_moz" /></span></p><p><span style="background-color: rgb(255, 255, 0); ">web.xml</span></p><p>&lt;web-app&gt;</p><p>&nbsp;</p><p><span class="Apple-tab-span" style="white-space: pre; "> </span>&lt;jsp-config&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">        </span>&lt;taglib&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">            </span>&lt;taglib-uri&gt;/mytag&lt;/taglib-uri&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">           </span>&lt;taglib-location&gt;/WEB-INF/MyTag.tld&lt;/taglib-location&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">     </span>&lt;/taglib&gt;</p><p><span class="Apple-tab-span" style="white-space: pre; ">   </span>&lt;/jsp-config&gt;</p><p>&lt;/web-app&gt;</p><p>其中,taglib-location是tld文件的位置</p><p>&nbsp;</p><p><span style="background-color: rgb(255, 255, 0); ">tag.jsp</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</p><p>&nbsp;&nbsp; &nbsp;pageEncoding=&quot;UTF-8&quot;%&gt;</p><p>&lt;%@taglib prefix=&quot;mine&quot; uri=&quot;/mytag&quot; %&gt;</p><p>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;<a href="http://www.w3.org/TR/html4/loose.dtd&quot;&gt;">http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</a></p><p>&lt;html&gt;</p><p>&lt;head&gt;</p><p>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</p><p>&lt;title&gt;Insert title here&lt;/title&gt;</p><p>&lt;/head&gt;</p><p>&lt;body&gt;</p><p>&lt;mine:time&gt;&lt;/mine:time&gt;</p><p>&lt;/body&gt;</p><p>&lt;/html&gt;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>&hellip;</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/6/4/jsp_customer_tag.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="article-pager text-center">
+                <a class="btn btn-lg btn-info" href="/posts/11.html">更新的</a>
+                <a class="btn btn-lg btn-info" href="/posts/13.html">以前的</a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

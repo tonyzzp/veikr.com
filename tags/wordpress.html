@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>wordpress - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content="veikr的博客"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post-tag" data-perma="post-tag-wordpress">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-list">
+            <h2 class="tag text-center">wordpress</h2>
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">10</span>
+                            <span class="day">29</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2011/10/29/wordpress_mail_to_commenter.html">终于搞定了wordpress的评论回复邮件通知插件</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>用过各种各样的邮件插件和评论回复邮件通知的插件，总是没有找到完美的，都会有这样或那样的问题。</p>
+
+<p>这次下决心要把问题搞好，算起来总花了一天多时间。把经验分享一下，免得朋友们走弯路。</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2011/10/29/wordpress_mail_to_commenter.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">10</span>
+                            <span class="day">26</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2011/10/26/wordpress_could_not_connect_to_smtp_host.html">wordpress发邮件出现Could not connect to SMTP host的解决办法(转载)</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>很多php主机都禁用了mail()函数，所以一般找一个smtp的插件来完成发送邮件的工作。</p>
+
+<p>wp-mail-smtp这个插件不错，但可能很多人都遇到过 could not connect to SMTP host的错误。</p>
+
+<p>这个问题纠结很久，网上到处找，遇到这个问题的人也很多，后来终于找到了一篇文章介绍的解决办法。</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2011/10/26/wordpress_could_not_connect_to_smtp_host.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">14</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2011/6/14/wordpress_reset_password_key_invalide.html">wordpress重置密码的时候&#39;key似乎无效&#39;的解决办法</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>wordpress有用户注册功能，如果用户忘记了密码，可以通过邮箱找回。但你肯定遇到过点击链接后提示“抱歉，key似乎无效”的情况。可能wordpress的小BUG，或者说是收件人邮箱系统的BUG。收到的密码重置链接会类似这样<a href="http://veikr.com/wp-login.php?action=rp&amp;key=QKO8DDJ3WbIcb506Teiz&amp;login=aaaaa" target="_blank"><a href="http://veikr.com/wp-login.php?action=rp&amp;key=QKO8DDJ3WbIcb506Teiz&amp;login=aaaaa">http://veikr.com/wp-login.php?action=rp&amp;key=QKO8DDJ3WbIcb506Teiz&amp;login=aaaaa</a></a> 。可能是为了美观，在链接前后增加了&lt;&gt;，但邮件又是纯文本格式的，邮箱收到后会自动添加超链接，好心办了坏事儿。结果链接就变成了<a href="http://veikr.com/wp-login.php?action=rp&amp;key=QKO8DDJ3WbIcb506Teiz&amp;login=aaaaa&gt;" target="_blank"><a href="http://veikr.com/wp-login.php?action=rp&amp;key=QKO8DDJ3WbIcb506Teiz&amp;login=aaaaa&gt;">http://veikr.com/wp-login.php?action=rp&amp;key=QKO8DDJ3WbIcb506Teiz&amp;login=aaaaa&gt;</a></a> 这样。后面多了个&gt;，这一点进去能不key无效吗？</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2011/6/14/wordpress_reset_password_key_invalide.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="article-pager text-center">
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

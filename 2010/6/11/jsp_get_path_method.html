@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>jsp中获取路径的各种方法 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="jsp_get_path_method">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">11</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/6/11/jsp_get_path_method.html">jsp中获取路径的各种方法</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/java.html">java</a>
+                            
+                            <a class="tag label label-info" href="/tags/jsp.html">jsp</a>
+                            
+                            <a class="tag label label-info" href="/tags/request.html">request</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e8%b7%af%e5%be%84.html">路径</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p>&nbsp;本文概要:主要简单介绍jsp中获取路径的各种方法.<br />比如request.getRequestURI &nbsp; &nbsp; request,getRequestURL &nbsp; &nbsp;request.getContextPath &nbsp; &nbsp;request.getRealpath等等</p><p>&nbsp;尝试把下面的代码放到不同的站点、不同路径下运行 查看效果</p><p>&nbsp;</p><p><p>request.getRealPath(&quot;&quot;):&lt;br /&gt;</p>...</p>
+
+<!--more-->
+
+<p>&nbsp;本文概要:主要简单介绍jsp中获取路径的各种方法.<br />比如request.getRequestURI &nbsp; &nbsp; request,getRequestURL &nbsp; &nbsp;request.getContextPath &nbsp; &nbsp;request.getRealpath等等</p><p>&nbsp;尝试把下面的代码放到不同的站点、不同路径下运行 查看效果</p><p>&nbsp;</p><p><p>request.getRealPath(&quot;&quot;):&lt;br /&gt;</p><p>&lt;%=request.getRealPath(&quot;&quot;)%&gt;&lt;p/&gt;</p><p>&nbsp;</p><p>request.getRealPath(&quot;/&quot;):&lt;br /&gt;</p><p>&lt;%=request.getRealPath(&quot;/&quot;)%&gt;&lt;p/&gt;</p><p>&nbsp;</p><p>request.getScheme():&lt;br/&gt;&lt;%=request.getScheme() %&gt;&lt;p/&gt;</p><p>request.getServerName():&lt;br/&gt;&lt;%=request.getServerName() %&gt;&lt;p/&gt;</p><p>request.getServerPort():&lt;br/&gt;&lt;%=request.getServerPort() %&gt;&lt;p/&gt;</p><p>request.getMethod():&lt;br/&gt;&lt;%=request.getMethod() %&gt;&lt;p/&gt;</p><p>request.getRequestedSessionId():&lt;br/&gt;&lt;%=request.getRequestedSessionId() %&gt;&lt;p/&gt;</p><p>request.getRequestURI():&lt;br/&gt;&lt;%=request.getRequestURI() %&gt;&lt;p/&gt;</p><p>request.getRequestURL():&lt;br/&gt;&lt;%=request.getRequestURL() %&gt;&lt;p/&gt;</p><p>request.getQueryString():&lt;br/&gt;&lt;%=request.getQueryString() %&gt;&lt;p/&gt;</p><p>request.getServletPath():&lt;br/&gt;&lt;%=request.getServletPath() %&gt;&lt;p/&gt;</p><p>request.getProtocol():&lt;br/&gt;&lt;%=request.getProtocol() %&gt;&lt;p/&gt;</p><p>request.getContextPath():&lt;br/&gt;&lt;%=request.getContextPath() %&gt;&lt;p/&gt;</p><p>request.getSession().getServletContext().getRealPath(request.getRequestURI()):&lt;br/&gt;&lt;%=request.getSession().getServletContext().getRealPath(request.getRequestURI()) %&gt;&lt;p/&gt;</p></p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

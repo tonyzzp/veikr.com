@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>wordpress发邮件出现Could not connect to SMTP host的解决办法(转载) - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="wordpress_could_not_connect_to_smtp_host">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">10</span>
+                            <span class="day">26</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2011/10/26/wordpress_could_not_connect_to_smtp_host.html">wordpress发邮件出现Could not connect to SMTP host的解决办法(转载)</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/fsockopen.html">fsockopen</a>
+                            
+                            <a class="tag label label-info" href="/tags/mail.html">mail</a>
+                            
+                            <a class="tag label label-info" href="/tags/pfsockopen.html">pfsockopen</a>
+                            
+                            <a class="tag label label-info" href="/tags/smtp.html">smtp</a>
+                            
+                            <a class="tag label label-info" href="/tags/wordpress.html">wordpress</a>
+                            
+                            <a class="tag label label-info" href="/tags/wp-mail-smtp.html">wp-mail-smtp</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e9%82%ae%e4%bb%b6.html">邮件</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p>很多php主机都禁用了mail()函数，所以一般找一个smtp的插件来完成发送邮件的工作。</p>
+
+<p>wp-mail-smtp这个插件不错，但可能很多人都遇到过 could not connect to SMTP host的错误。</p>
+
+<p>这个问题纠结很久，网上到处找，遇到这个问题的人也很多，后来终于找到了一篇文章介绍的解决办法。</p>
+
+<!--more-->
+
+<p>其实是主机禁用了fsockopen()函数，你可以写一个phpinfo看一下是否禁用了这个函数。
+<pre class="brush:php">&lt;?php
+phpinfo();
+?&gt;</pre>
+然后你可以在disable_functions一栏看到fsockopen，果然被禁用。
+解决办法：
+<span style="color: #ff0000;">用pfsockopen()函数直接替换掉 fsockopen()</span>
+如果pfsockopen函数被禁用的话，换其他可以操作Socket函数来代替, 如stream_socket_client()
+找到wp-includes/class.smtp.php 文件
+把
+@fsockopen 改成 @pfsockopen</p>
+
+<p>方法转自<a href="http://www.hujuntao.com/archives/could-not-connect-to-smtp-host.html">http://www.hujuntao.com/archives/could-not-connect-to-smtp-host.html</a>
+已不知道原出处。</p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

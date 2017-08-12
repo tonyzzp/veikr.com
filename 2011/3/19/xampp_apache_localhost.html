@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>安装xampp后apache正常启动 但无法访问localhost的解决办法 - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post" data-perma="xampp_apache_localhost">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-single">
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">3</span>
+                            <span class="day">19</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2011/3/19/xampp_apache_localhost.html">安装xampp后apache正常启动 但无法访问localhost的解决办法</a>
+                            </h3>
+                        </header>
+                        <aside class="aside clearfix">
+                            
+                            <a class="tag label label-info" href="/tags/apache.html">apache</a>
+                            
+                            <a class="tag label label-info" href="/tags/localhost.html">localhost</a>
+                            
+                            <a class="tag label label-info" href="/tags/php.html">php</a>
+                            
+                            <a class="tag label label-info" href="/tags/winsock.html">winsock</a>
+                            
+                            <a class="tag label label-info" href="/tags/xampp.html">xampp</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e6%97%a0%e6%b3%95%e6%89%93%e5%bc%80.html">无法打开</a>
+                            
+                            <a class="tag label label-info" href="/tags/%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95.html">解决办法</a>
+                            
+                            
+                        </aside>
+                        <section class="brief"><p>&nbsp;文章概要:安装解压版的xampp后，apache显示正常启动了，但是localhost却无法访问。也排除了端口被占用的情况，那么要怎么样解决这个问题呢。&nbsp;安装xampp后apache显示正常启动，但是无法访问localhost。1.首先排除端口被占用的情况。使用netstat -ano命令查看80和443端口占用的进程ID，然后在任务管理器中查看该进程(菜单查看--显示列，选</p>
+
+<!--more-->
+
+<p>文章概要:安装解压版的xampp后，apache显示正常启动了，但是localhost却无法访问。也排除了端口被占用的情况，那么要怎么样解决这个问题呢。</p>
+
+<p>&nbsp;</p>
+
+<p>安装xampp后apache显示正常启动，但是无法访问localhost。</p>
+
+<!--more-->
+
+<p><span style="color: #ff0000;"><span style="font-size: x-large;">1.首先排除端口被占用的情况。</span></span></p>
+
+<p>使用netstat -ano命令查看80和443端口占用的进程ID，然后在任务管理器中查看该进程(菜单查看--显示列，选中PID)，如果是httpd，那么就是apache了，如果是其他程序，则先关掉这个程序。或者也可以修改apache的端口。</p>
+
+<p>打开/apche/conf/httpd.conf</p>
+
+<p>修改相应位置为</p>
+
+<p>Listen 8090</p>
+
+<p>ServerName localhost:8090</p>
+
+<p>&nbsp;</p>
+
+<p>打开 /apche/conf/extra/httpd-ssl.conf 修改为</p>
+
+<p>&nbsp;</p>
+
+<p>Listen:4433</p>
+
+<p>ServerName localhost:4433</p>
+
+<p>&nbsp;</p>
+
+<p><span style="color: #ff0000;"><span style="font-size: x-large;">2.如果已经排除端口占用情况，那么可能是winsock的问题了。</span></span></p>
+
+<p>使用360安全卫士可修复该问题。</p>
+
+<p>打开360安全卫士-功能大全-网络修复（LSP），修复就可以了。</p>
+
+<p>然后重新启动apache，于看看是不是可以访问localhost了？</p>
+
+<p>&nbsp;</p>
+</section>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+<section id="comment">
+    
+    
+</section>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

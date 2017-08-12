@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>html - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content="veikr的博客"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post-tag" data-perma="post-tag-html">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-list">
+            <h2 class="tag text-center">html</h2>
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">6</span>
+                            <span class="day">8</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/6/8/iframe_auto_fit_height.html">iframe自适应高度(适合IE firefox  opera)</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>做有些网页的时候用frameset会很方便,但是frameset很影响速度,而且还很不美观,并且seo也不好.所以用iframe还是比较好的选择.   <br />后来看到QQ空间个人中心也用的iframe,很漂亮.很好用.于是也试着用iframe.但是自适应高度很是个问题.不同的游戏器都会不一样,说到这儿我要再深深的BS一下IE..    <br />做了很多尝试,在网上看了很久,做了下小小的总结.希望对大家有帮助</p><p><font color="#ff0000" size="5">怎么获取网页的高度</font></p><p><font color="#0080ff" size="4">对于IE(我用的IE8,IE6就不知道行不行了)</font></p><p><font color="#000000" size="4">document.getElementById(&ldquo;myframe&rdquo;).Document.body.scrollHeight;</font></p><p><font color="#0080ff" size="4">对于其他浏览器(firefox&nbsp; opera)</font></p><p><font color="#000000" size="4">document.getElementById(&ldquo;myframe&rdquo;).contentDocument.body.scrollHeight;</font></p><p><font color="#0080ff" size="4">共用方法(IE8&nbsp; firefox&nbsp; opera)</font></p><p><font color="#000000" size="4">document.getElementById(&ldquo;myframe&rdquo;).contentWindow.document.body.scrollHeight;</font></p><p>&nbsp;</p><p><font color="#0080ff" size="4">代码</font></p><pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">&lt;</span><span style="color: #800000">html</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2: <span style="color: #0000ff">&lt;</span><span style="color: #800000">head</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3: <span style="color: #0000ff">&lt;</span><span style="color: #800000">title</span><span style="color: #0000ff">&gt;</span>iframe自适应高度<span style="color: #0000ff">&lt;/</span><span style="color: #800000">title</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4: <span style="color: #0000ff">&lt;</span><span style="color: #800000">script</span> <span style="color: #ff0000">type</span>=<span style="color: #0000ff">&quot;text/javascript&quot;</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5: function change(){</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6: var o=document.getElementById(&quot;myframe&quot;);</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7: var height= o.contentWindow.document.body.scrollHeight;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  8: o.height=height;</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  9: }</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 10: </pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 11: function show(){</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 12: var o=document.getElementById(&quot;myframe&quot;);</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 13: alert(o.contentWindow.document.body.scrollHeight);</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 14: }</pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 15: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">script</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 16: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">head</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 17: <span style="color: #0000ff">&lt;</span><span style="color: #800000">body</span> <span style="color: #ff0000">onresize</span>=<span style="color: #0000ff">&quot;change()&quot;</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 18: <span style="color: #0000ff">&lt;</span><span style="color: #800000">div</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 19: <span style="color: #0000ff">&lt;</span><span style="color: #800000">button</span> <span style="color: #ff0000">onclick</span>=<span style="color: #0000ff">&quot;document.getElementById('myframe').src='article.html'&quot;</span><span style="color: #0000ff">&gt;</span>日志<span style="color: #0000ff">&lt;/</span><span style="color: #800000">button</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 20: <span style="color: #0000ff">&lt;</span><span style="color: #800000">button</span> <span style="color: #ff0000">onclick</span>=<span style="color: #0000ff">&quot;document.getElementById('myframe').src='pic.html'&quot;</span><span style="color: #0000ff">&gt;</span>图片<span style="color: #0000ff">&lt;/</span><span style="color: #800000">button</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 21: <span style="color: #0000ff">&lt;</span><span style="color: #800000">button</span> <span style="color: #ff0000">onclick</span>=<span style="color: #0000ff">&quot;show()&quot;</span><span style="color: #0000ff">&gt;</span>显示高度<span style="color: #0000ff">&lt;/</span><span style="color: #800000">button</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 22: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">div</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 23: <span style="color: #0000ff">&lt;</span><span style="color: #800000">iframe</span> <span style="color: #ff0000">frameBorder</span>=<span style="color: #0000ff">&quot;1&quot;</span> <span style="color: #ff0000">scrolling</span>=<span style="color: #0000ff">&quot;no&quot;</span> <span style="color: #ff0000">id</span>=<span style="color: #0000ff">&quot;myframe&quot;</span> <span style="color: #ff0000">width</span>=<span style="color: #0000ff">&quot;50%&quot;</span> <span style="color: #ff0000">src</span>=<span style="color: #0000ff">&quot;article.html&quot;</span> <span style="color: #ff0000">onload</span>=<span style="color: #0000ff">&quot;change()&quot;</span><span style="co
+lor: #0000ff">&gt;</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">iframe</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 24: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">body</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 25: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">html</span><span style="color: #0000ff">&gt;</span></pre></pre><p>&nbsp;</p><p><font color="#ff0000" size="4">注:</font></p><p><font color="#000000" size="4">我用的浏览器版本</font></p><p><font color="#000000" size="4">IE8&nbsp;&nbsp; firefox3.5&nbsp;&nbsp; opera10.05</font></p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/6/8/iframe_auto_fit_height.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">5</span>
+                            <span class="day">1</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/5/1/html_label.html">html中的label标签的秒用</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>今天发才现了html中的label标签的一个有用的属性for。</p>  <p>for属性是与其他元素的id属性相对应的，必须和另外一个元素的id值一样，只有这样才能发挥作用。</p>  <p>看以下代码</p>  <pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,&#39;Courier New&#39;,courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">&lt;</span><span style="color: #800000">form</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&#39;Courier New&#39;,courier,monospace; font-size: 12px">  2:   <span style="color: #0000ff">&lt;</span><span style="color: #800000">label</span> <span style="color: #ff0000">for</span>=<span style="color: #0000ff">&quot;male&quot;</span><span style="color: #0000ff">&gt;</span>Male<span style="color: #0000ff">&lt;/</span><span style="color: #800000">label</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,&#39;Courier New&#39;,courier,monospace; font-size: 12px">  3:   <span style="color: #0000ff">&lt;</span><span style="color: #800000">input</span> <span style="color: #ff0000">type</span>=<span style="color: #0000ff">&quot;radio&quot;</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&quot;sex&quot;</span> <span style="color: #ff0000">id</span>=<span style="color: #0000ff">&quot;male&quot;</span> <span style="color: #0000ff">/&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&#39;Courier New&#39;,courier,monospace; font-size: 12px">  4:   <span style="color: #0000ff">&lt;</span><span style="color: #800000">br</span> <span style="color: #0000ff">/&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,&#39;Courier New&#39;,courier,monospace; font-size: 12px">  5:   <span style="color: #0000ff">&lt;</span><span style="color: #800000">label</span> <span style="color: #ff0000">for</span>=<span style="color: #0000ff">&quot;female&quot;</span><span style="color: #0000ff">&gt;</span>Female<span style="color: #0000ff">&lt;/</span><span style="color: #800000">label</span><span style="color: #0000ff">&gt;</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&#39;Courier New&#39;,courier,monospace; font-size: 12px">  6:   <span style="color: #0000ff">&lt;</span><span style="color: #800000">input</span> <span style="color: #ff0000">type</span>=<span style="color: #0000ff">&quot;radio&quot;</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&quot;sex&quot;</span> <span style="color: #ff0000">id</span>=<span style="color: #0000ff">&quot;female&quot;</span> <span style="color: #0000ff">/&gt;</span></pre><pre style="background-color: #eaeaea; margin: 0em; width: 100%; font-family: consolas,&#39;Courier New&#39;,courier,monospace; font-size: 12px">  7: <span style="color: #0000ff">&lt;/</span><span style="color: #800000">form</span><span style="color: #0000ff">&gt;</span></pre></pre><p>一般情况下，我们都会直接把male和female写出来，而不会再用个falbe标签。</p><p>但是假如用了label标签，并指定了for属性。这样做的好处是。</p><p>当你点击label for=”male”时和点击 imput type=”radio” id=”male”效果是一样的。</p><p>也就是说这个label标签和与他id一样的元素绑定了，他们的事件一样</p><p>所以这个label就是(for)为了另一个元素的</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/5/1/html_label.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="article-pager text-center">
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>

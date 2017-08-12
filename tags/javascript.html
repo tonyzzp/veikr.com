@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>javascript - veikr的博客</title>
+    <meta name="keywords" content="veikr的博客"/>
+    <meta name="description" content="veikr的博客"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="post-tag" data-perma="post-tag-javascript">
+<header id="header">
+    <div class="container">
+        <div class="header clearfix">
+            <nav id="site-nav">
+                <ul class="nav nav-inverse nav-pills pull-right">
+                    <li role="presentation" class="">
+                        <a href="/" >文章
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="/archive" >归档
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="site-title">
+                <a href="/">veikr的博客 <sup>关于web、关于java、关于android</sup></a>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<section id="main">
+    <div class="container">
+        <div id="article-list">
+            <h2 class="tag text-center">javascript</h2>
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">8</span>
+                            <span class="day">25</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/8/25/jquery_iframe_load.html">使用jquery获取iframe加载完成事件</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>本文概要：网页中的iframe加载完成后，希望做一些工作。比如在iframe内容改变前在某处显示&rdquo;正在加载&rdquo;，在加载完成后，显示内容改为&rdquo;加载完成&rdquo;。那么该怎么处理呢？<br/><br/>在jquery中iframe加载完成事件为load，而不是ready<br/><br/>[code=html]<br/><br/><br/><br/><br/><br/>$(function(){<br/>   $(&ldquo;#phone&rdquo;).change(function(){<br/>     $(&ldquo;#message&rdquo;)</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/8/25/jquery_iframe_load.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">7</span>
+                            <span class="day">27</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/7/27/java_select_none_attribute.html">jquery如何选择不含某属性的元素</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>jquery的选择器有很多种<br/>今天遇到一个问题<br/>怎么样选择不含某个属性的元素的呢.<br/>尝试过很多种写法<br/>比如:<br/>$(&ldquo;span[class=null]&ldquo;)<br/>$(&ldquo;span[class==ull]&ldquo;)<br/>$(&ldquo;span[!class]&ldquo;)<br/>$(&ldquo;span[^class]&ldquo;)<br/>&hellip;.都没成功<br/>后来尝试了最傻的方法  居然成功了<br/>$(&ldquo;span[class=&ldquo;]&rdquo;)</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/27/java_select_none_attribute.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">4</span>
+                            <span class="day">23</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/4/23/ie_button_bug.html">ie里的button标签的一个bug</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>做毕业设计的时候，偶像间发现了ie的button标签的一个bug </p>  <p>原始的按钮我们这样写</p>  <p>&lt;input type=”button” id=”button_id” value=”值” /&gt;&#160;&#160;&#160; </p>  <p>这个按钮是value也是按钮上显示的文字 </p>  <p>而新的button标签是这样定义按钮的</p>  <p>&lt;button id=”button_id” value=”值”&gt;这是按钮&lt;/button&gt;</p>  <p>这个按钮的值和按钮上显示的文字是独立的 </p>  <p>但是ie却有个bug</p>  <p>在用button定义一个按钮的时候，取这个元素的值，取到的却是按钮上显示的文字，也就是“这是按钮”，而正确的值应该是“值”</p>  <p>firefox、chrome都没有这个问题。 </p>  <p>另外，我用的是jquery的$(“#button_id”).val()取的值，没有用原始的js取。不知道会不会不一样呢.. </p>  <p>希望ie再能对标准支持的好一点。这样能为网页开发人员省正好多事啊，也不用每做个东西，就要开几个浏览器去测试了。。悲哀。。</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/4/23/ie_button_bug.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="article-pager text-center">
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="container text-center">
+        <p>© 2015 veikr的博客.
+            <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved </a> |
+            <a href="/feed.xml">Feed</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+        </p>
+        <p>Powered by <a href="https://github.com/go-xiaohei/pugo">PuGo 0.10.5 (beta)</a>. Theme by Default.
+        </p>
+        
+    
+    
+
+    </div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prism.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("pre code").addClass("line-numbers")
+    });
+</script>
+</body>
+</html>
