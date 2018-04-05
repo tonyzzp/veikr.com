@@ -42,18 +42,18 @@
                         <header class="header">
                             <div class="meta">
                         <span class="date">
-                            <span class="month">8</span>
-                            <span class="day">5</span>
+                            <span class="month">7</span>
+                            <span class="day">8</span>
                         </span>
                             </div>
                             <h3 class="title">
-                                <a href="/2010/8/5/java_pointer_2.html">Java中的指针(二)</a>
+                                <a href="/2010/7/8/spring_mvc_upload.html">使用spring  mvc上传文件的简单教程</a>
                             </h3>
                         </header>
-                        <section class="brief"><p>本文摘要:接着上次的来,讲java中的指针.上篇文章中举了个例子,把某对象存入session,再取出来,改变其中的变量值,那么不需要再进行session.setAttribute,但是session中的对象也已经跟着改变了.这次再举个例子,是list<br/>直接看代码<br/><br/><br/>User.java<br/>[code=java]<br/>package test;<br/><br/>public class User implements Cloneable {<br/>    private int id;<br/>    private String name;<br/>&hellip;</p>
+                        <section class="brief"><p>本文概要：使用spring mvc进行简单的文件上传。<br/><br/>1、首先在spring中配置一个bean<br/>[code=xml]<br/><bean id="multipartResolver"<br/>      class=&ldquo;org.springframework.web.multipart.commons.CommonsMultipartResolver&rdquo;&gt;<br/>        <property name="maxUploadSize" value="100000" />    </bean><br/>[/code]<br/><font color="Red">注意：这个bean的id一定要是multipartResolver，不然会出错</font><br/>&hellip;</p>
 </section>
                         <aside class="aside clearfix">
-                            <a class="btn btn-primary btn-lg pull-right" href="/2010/8/5/java_pointer_2.html">继续阅读</a>
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/8/spring_mvc_upload.html">继续阅读</a>
                         </aside>
                     </div>
                 </div>
@@ -66,17 +66,17 @@
                             <div class="meta">
                         <span class="date">
                             <span class="month">7</span>
-                            <span class="day">27</span>
+                            <span class="day">7</span>
                         </span>
                             </div>
                             <h3 class="title">
-                                <a href="/2010/7/27/java_select_none_attribute.html">jquery如何选择不含某属性的元素</a>
+                                <a href="/2010/7/7/spring_hibernate_produce.html">spring&#43;hibernate最简单入门教程(事例下载)</a>
                             </h3>
                         </header>
-                        <section class="brief"><p>jquery的选择器有很多种<br/>今天遇到一个问题<br/>怎么样选择不含某个属性的元素的呢.<br/>尝试过很多种写法<br/>比如:<br/>$(&ldquo;span[class=null]&ldquo;)<br/>$(&ldquo;span[class==ull]&ldquo;)<br/>$(&ldquo;span[!class]&ldquo;)<br/>$(&ldquo;span[^class]&ldquo;)<br/>&hellip;.都没成功<br/>后来尝试了最傻的方法  居然成功了<br/>$(&ldquo;span[class=&ldquo;]&rdquo;)</p>
+                        <section class="brief"><p>本文摘要：刚进公司，有个项目是用spring+hibernate做的，现在要功能。但我对spring hibernate一点也不懂。<br/>天天网上找资料，好难找。搞了将近一个星期才把这个hello world搞出来。惭愧啊 。。<br/>现在把代码发上来，可能会有需要的人。<br/><br/>主要功能：<br/>spring+hibernate整合。<br/>使用spring mvc框架处理请求，使用hibernate操作数据库<br/>使用到了multiactioncontroller   simpleformcontroller<br/><br/>功能：<br/>插入新数据<br/>&hellip;</p>
 </section>
                         <aside class="aside clearfix">
-                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/27/java_select_none_attribute.html">继续阅读</a>
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/7/spring_hibernate_produce.html">继续阅读</a>
                         </aside>
                     </div>
                 </div>
@@ -88,18 +88,18 @@
                         <header class="header">
                             <div class="meta">
                         <span class="date">
-                            <span class="month">7</span>
-                            <span class="day">27</span>
+                            <span class="month">6</span>
+                            <span class="day">28</span>
                         </span>
                             </div>
                             <h3 class="title">
-                                <a href="/2010/7/27/java_pointer_1.html">Java中的指针(一)</a>
+                                <a href="/2010/6/28/none_struts_validate_error_message.html">不使用struts标签显示表单验证的错误信息</a>
                             </h3>
                         </header>
-                        <section class="brief"><p>本文概要:学过java的都知道,java的一些特性(或者说java所宣传的java的优势).其中有一条就是java没有指针.java去掉了c++中常见的指针,指针虽然很方便,但很多时候往往带带很多麻烦,使用的时候也是胆战心惊.但事实上java真的没有指针吗?<br/><br/>在有的时候,你可以会遇到一个问题,从某个地方取出的某个对象,你对它做了改变,你会发现原来的那个对象也被一起改变了.<br/>比如下面这个事例<br/>User.java<br/>[code=java]<br/>package test;<br/><br/>public class User implements Cloneable {<br/>&hellip;</p>
+                        <section class="brief"><p>本文概要:在使用struts2的表单验证的时候,会有一些信息(比如字段错误信息)返回到jsp页面中,显示给用户.<br/>使用struts标签可以很简单的达到目的.但是struts标签却自带样式,排版起来非常不方便.这里就介绍怎么样不使用struts标签,来显示出这些信息<br/><br/>比如有如下网页:<br/>[code=java]<br/>actionerror:<br/>actionmessage:<br/><br/><br/>   <br/>   提交<br/><br/>[/java]<br/></p>
 </section>
                         <aside class="aside clearfix">
-                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/27/java_pointer_1.html">继续阅读</a>
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/6/28/none_struts_validate_error_message.html">继续阅读</a>
                         </aside>
                     </div>
                 </div>
@@ -111,18 +111,18 @@
                         <header class="header">
                             <div class="meta">
                         <span class="date">
-                            <span class="month">7</span>
-                            <span class="day">16</span>
+                            <span class="month">6</span>
+                            <span class="day">25</span>
                         </span>
                             </div>
                             <h3 class="title">
-                                <a href="/2010/7/16/disable_myeclipse_plgin_start_faster.html">禁用myeclipse的无用插件 关闭自动更新 加快启动速度</a>
+                                <a href="/2010/6/25/java_keystore_export_cert.html">java中从keystore里导出证书</a>
                             </h3>
                         </header>
-                        <section class="brief"><p><p>&nbsp;本文概要：禁用myeclipse中不常用的各种插件，关闭自动更新。大幅度加快启动和响应速度</p><p>&nbsp;</p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; "><span style="color: rgb(0, 204, 255); ">去除不需要加载的模块</span></p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; "><br />windows&ndash;&gt;perferences&ndash;&gt;general&ndash;&gt;startup and shutdown</p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; ">关掉没用的启动项：</p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; ">怎样才能知道哪些启动项有用呢？我现在把我知道的启动项用处说一下，还有很多不懂的，希望大家懂的回复在下面啊：<br />WTP ：一个跟myeclipse差不多的东西，主要差别是 WTP 是免费的，如果使用myeclipse，这个可以取消<br />Mylyn：组队任务管理工具，类似于 CVS ，以任务为单位管理项目进度，没用到的可以取消<br />Derby：一种保存成 jar 形式的数据库，我没用到，取消<br />一大排以 MyEclipse EASIE 打头的启动项：myeclipse 支持的服务器，只选自己用的，其他取消，比如我只选了tomcat</p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; "><span style="color: rgb(0, 204, 255); ">取消MyEclipse在启动时自动验证项目配置文件</span></p></p>
+                        <section class="brief"><p>本文概要：在java中从证书库(keystore)文件中直接导出证书文件(.cer)<br/><br/>方法：<br/>1.读取keystore文件<br/>2.使用keystore的getCertificate方法从证书库中读取出证书<br/>3.使用一个writer类，将证书的encoded经过base64编码后存入文件<br/><br/>[code=java]<br/>package cert;<br/><br/>import java.io.FileInputStre</p>
 </section>
                         <aside class="aside clearfix">
-                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/16/disable_myeclipse_plgin_start_faster.html">继续阅读</a>
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/6/25/java_keystore_export_cert.html">继续阅读</a>
                         </aside>
                     </div>
                 </div>
