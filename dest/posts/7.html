@@ -43,29 +43,6 @@
                             <div class="meta">
                         <span class="date">
                             <span class="month">8</span>
-                            <span class="day">25</span>
-                        </span>
-                            </div>
-                            <h3 class="title">
-                                <a href="/2010/8/25/jquery_iframe_load.html">使用jquery获取iframe加载完成事件</a>
-                            </h3>
-                        </header>
-                        <section class="brief"><p>本文概要：网页中的iframe加载完成后，希望做一些工作。比如在iframe内容改变前在某处显示&rdquo;正在加载&rdquo;，在加载完成后，显示内容改为&rdquo;加载完成&rdquo;。那么该怎么处理呢？<br/><br/>在jquery中iframe加载完成事件为load，而不是ready<br/><br/>[code=html]<br/><br/><br/><br/><br/><br/>$(function(){<br/>   $(&ldquo;#phone&rdquo;).change(function(){<br/>     $(&ldquo;#message&rdquo;)</p>
-</section>
-                        <aside class="aside clearfix">
-                            <a class="btn btn-primary btn-lg pull-right" href="/2010/8/25/jquery_iframe_load.html">继续阅读</a>
-                        </aside>
-                    </div>
-                </div>
-            </article>
-            
-            <article class="article">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1 panel panel-default">
-                        <header class="header">
-                            <div class="meta">
-                        <span class="date">
-                            <span class="month">8</span>
                             <span class="day">18</span>
                         </span>
                             </div>
@@ -88,18 +65,18 @@
                         <header class="header">
                             <div class="meta">
                         <span class="date">
-                            <span class="month">8</span>
-                            <span class="day">12</span>
+                            <span class="month">7</span>
+                            <span class="day">27</span>
                         </span>
                             </div>
                             <h3 class="title">
-                                <a href="/2010/8/12/java_pointer_4.html">java中的指针(四)</a>
+                                <a href="/2010/7/27/java_select_none_attribute.html">jquery如何选择不含某属性的元素</a>
                             </h3>
                         </header>
-                        <section class="brief"><p>本文概要:java中的深拷贝,实现类的真正完全复制.<br/><br/>User.java<br/>[code=java]<br/>package test;<br/><br/>public class User implements Cloneable {<br/>  private int id;<br/>    private String name;<br/>   private int age;<br/>   private Website site;<br/><br/> public User(</p>
+                        <section class="brief"><p>jquery的选择器有很多种<br/>今天遇到一个问题<br/>怎么样选择不含某个属性的元素的呢.<br/>尝试过很多种写法<br/>比如:<br/>$(&ldquo;span[class=null]&ldquo;)<br/>$(&ldquo;span[class==ull]&ldquo;)<br/>$(&ldquo;span[!class]&ldquo;)<br/>$(&ldquo;span[^class]&ldquo;)<br/>&hellip;.都没成功<br/>后来尝试了最傻的方法  居然成功了<br/>$(&ldquo;span[class=&ldquo;]&rdquo;)</p>
 </section>
                         <aside class="aside clearfix">
-                            <a class="btn btn-primary btn-lg pull-right" href="/2010/8/12/java_pointer_4.html">继续阅读</a>
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/27/java_select_none_attribute.html">继续阅读</a>
                         </aside>
                     </div>
                 </div>
@@ -111,18 +88,41 @@
                         <header class="header">
                             <div class="meta">
                         <span class="date">
-                            <span class="month">8</span>
-                            <span class="day">12</span>
+                            <span class="month">7</span>
+                            <span class="day">16</span>
                         </span>
                             </div>
                             <h3 class="title">
-                                <a href="/2010/8/12/java_pointer_3.html">java中的指针(三)</a>
+                                <a href="/2010/7/16/disable_myeclipse_plgin_start_faster.html">禁用myeclipse的无用插件 关闭自动更新 加快启动速度</a>
                             </h3>
                         </header>
-                        <section class="brief"><p>本文概要:前几篇文章中谈到了java中的指针.现在有个问题是,如果你先定义了一个对象,现在想把这个对象拿来用,会改变一些值.但是又不想影响到原来的对象,那该怎么办呢?方法是克隆.<br/><br/>User.java<br/>[code=java]<br/>package test;<br/><br/>public class User implements Cloneable {<br/>   private int id;<br/>    private Strin</p>
+                        <section class="brief"><p><p>&nbsp;本文概要：禁用myeclipse中不常用的各种插件，关闭自动更新。大幅度加快启动和响应速度</p><p>&nbsp;</p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; "><span style="color: rgb(0, 204, 255); ">去除不需要加载的模块</span></p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; "><br />windows&ndash;&gt;perferences&ndash;&gt;general&ndash;&gt;startup and shutdown</p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; ">关掉没用的启动项：</p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; ">怎样才能知道哪些启动项有用呢？我现在把我知道的启动项用处说一下，还有很多不懂的，希望大家懂的回复在下面啊：<br />WTP ：一个跟myeclipse差不多的东西，主要差别是 WTP 是免费的，如果使用myeclipse，这个可以取消<br />Mylyn：组队任务管理工具，类似于 CVS ，以任务为单位管理项目进度，没用到的可以取消<br />Derby：一种保存成 jar 形式的数据库，我没用到，取消<br />一大排以 MyEclipse EASIE 打头的启动项：myeclipse 支持的服务器，只选自己用的，其他取消，比如我只选了tomcat</p><p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; "><span style="color: rgb(0, 204, 255); ">取消MyEclipse在启动时自动验证项目配置文件</span></p></p>
 </section>
                         <aside class="aside clearfix">
-                            <a class="btn btn-primary btn-lg pull-right" href="/2010/8/12/java_pointer_3.html">继续阅读</a>
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/16/disable_myeclipse_plgin_start_faster.html">继续阅读</a>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 panel panel-default">
+                        <header class="header">
+                            <div class="meta">
+                        <span class="date">
+                            <span class="month">7</span>
+                            <span class="day">8</span>
+                        </span>
+                            </div>
+                            <h3 class="title">
+                                <a href="/2010/7/8/spring_mvc_upload_error.html">使用spring  mvc上传文件的常见错误解决办法</a>
+                            </h3>
+                        </header>
+                        <section class="brief"><p>本文摘要：在使用spring mvc上传文件时的常见错误的解决办法&nbsp;1、 异常：org.apache.catalina.connector.RequestFacade cannot be cast to org.springframework.web.multipart.MultipartHttpServletRequest解决办法：在spring里面配置   重点：id一定要是mult</p>
+</section>
+                        <aside class="aside clearfix">
+                            <a class="btn btn-primary btn-lg pull-right" href="/2010/7/8/spring_mvc_upload_error.html">继续阅读</a>
                         </aside>
                     </div>
                 </div>
