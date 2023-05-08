@@ -1,6 +1,6 @@
 ```toml
 title = "Pricacy Policy"
-slug = privacy_policy
+slug = "privacy_policy"
 date = "2018-09-20 12:24:00"
 template = "simple.html"
 
