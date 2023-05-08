@@ -44,7 +44,7 @@
   use_gravatar = false
   slug = "/author/admin/"
   [author.social]
-    github = "https://github.com/admin"
+    github = ""
 
 [extension]
   [extension.feed]
@@ -69,7 +69,7 @@
       id = ""
       ck = ""
   [extension.comments]
-    enabled = true
+    enabled = false
     [extension.comments.disqus]
       enabled = false
       shortname = ""
