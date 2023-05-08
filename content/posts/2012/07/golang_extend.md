@@ -1,5 +1,5 @@
 ```toml
-title = "go语言的中'继承'"
+title = "go语言中的'继承'"
 slug = "golang_extend"
 description = ""
 date = "2012-07-21 20:17:13"
@@ -18,8 +18,8 @@ tags = ["go","继承","语言"]
 
 代码如下：
 
-&nbsp;
-<pre class="brush:py">package main 
+```go
+package main 
 
 import(
 	"fmt"
@@ -76,7 +76,7 @@ func main() {
 	test(h)
 	//test(s)//导致错误，方法需要Human类型，但传的是SuperMan类型
 	test(s.Human)//正确
-}</pre>
-&nbsp;
+}
+```
 
 代码很简单，自己把代码复制出来运行一下，然后一行行对照着看，很容易就理解了。也没什么好讲的。
