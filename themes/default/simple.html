@@ -1,8 +1,8 @@
 <html>
 <body>
-{{if .Page.Title}}
+{{if .page.Title}}
 <center><h1>{{.Page.Title}}</h1></center>
 {{end}}
-{{.Page.ContentHTML}}
+{{HTML .page.Content}}
 </body>
 </html>
