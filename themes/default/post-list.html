@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+{{template "head.html" .}}
+
+<body>
+    {{template "header.html" .}}
+    <main class="main">
+        <div class="main-container">
+            <div class="main-left-container post-list">
+                {{if .tag}}<div class="post-header">
+                    #{{.tag.Name}}</div>{{end}}
+                {{range .posts}}<article class="post-container">
+                    <h3 class="post-title">
+                        <a href="{{.Link}}">{{.Title}}</a></h3>
+                    <div class="post-meta">
+                        <span class="post-date">{{.Date.Format "2006-01-02"}}</span>
+                        <span class="post-meta-gap">|</span>
+                        <span class="post-author">{{.Author.Name}}</span>
+                        {{if .Draft}}
+                        <span class="post-meta-gap">|</span>
+                        <span class="post-draft">Draft</span>
+                        {{end}}
+                        {{range .TagLinks}}<span class="post-meta-gap">|</span>
+                        <a href="{{.Link}}" class="post-tag">#{{.Name}}</a>{{end}}
+                    </div>
+                    <div class="post-brief post-content">
+                        {{HTML .Brief}}</div>
+                    <div class="post-readmore">
+                        <a href="{{.Link}}" class="post-tag">Read More</a>
+                    </div>
+                </article>{{end}}
+                {{template "partial/pager.html" .}}
+            </div>
+            {{template "partial/sidebar.html" .}}
+        </div>
+    </main>
+    {{template "footer.html" .}}
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<div class="post-pager">
+    {{if .pager.HasPrev}}<a href="{{.pager.PrevLink}}"
+        class="post-pager-step">Prev</a>{{end}}
+    <span class="post-pager-size">{{.pager.Current}} / {{.pager.Total}}</span>
+    {{if .pager.HasNext}}<a href="{{.pager.NextLink}}"
+        class="post-pager-step">Next</a>{{end}}
+</div>

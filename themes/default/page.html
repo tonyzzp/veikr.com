@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{{template "head.html" .}}
+<body>
+    {{template "header.html" .}}
+    <main class="main">
+        <div class="main-container">
+            <div class="main-left-container">
+                <article class="post-container">
+                    <h3 class="post-title"><a
+                            href="{{.page.Link}}">{{.page.Title}}</a></h3>
+                    <div class="post-meta">
+                        <span class="post-date">{{.page.Date.Format "2006-01-02"}}</span>
+                        <span class="post-meta-gap">|</span>
+                        <span class="post-author">{{.page.Author.Name}}</span>
+                        {{if .page.Draft}}
+                        <span class="post-meta-gap">|</span>
+                        <span class="post-draft">Draft</span>
+                        {{end}}
+                    </div>
+                    <div class="post-content">{{HTML .page.Content}}</div>
+                    {{if and .extension.Comments.Enabled .page.Comment}}
+                    <section class="post-comment comment-{{.extension.Comments.Current}}">
+                        {{template "partial/comments.html" .}}
+                    </section>
+                    {{else}}
+                    <section class="post-comment">
+                        <div class="comment-closed"> Comment is closed</div>
+                    </section>
+                    {{end}}
+                </article>
+            </div>
+            {{template "partial/sidebar.html" .}}
+        </div>
+    </main>
+    {{template "footer.html" .}}
+</body>
+</html>

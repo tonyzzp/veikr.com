@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+{{template "head.html" .}}
+
+<body>
+    {{template "header.html" .}}
+    <main class="main">
+        <div class="main-container">
+            <div class="main-left-container">
+                <div class="post-header">Archives</div>
+                {{range .archives}}<section class="post-container">
+                    <h3 class="archive-title">{{.Year}}</h3>
+                    <ul class="archive-list">
+                        {{range .Posts}}<li class="archive-item">
+                            <span class="archive-date">{{.Date.Format "01-02"}}</span>
+                            <span class="post-meta-gap">|</span>
+                            <a class="archive-post-title" href="{{.Link}}">{{.Title}}</a>
+                        </li>{{end}}
+                    </ul>
+                </section>{{end}}
+            </div>
+            {{template "partial/sidebar.html" .}}
+        </div>
+    </main>
+    {{template "footer.html" .}}
+</body>
+
+</html>
