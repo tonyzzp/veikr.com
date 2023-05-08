@@ -1,7 +1,7 @@
 ```toml
 title = "android新浪微博客户端oauth认证中UC无法跳转的问题"
 slug = "android_sina_oauth_uc_jump"
-desc = ""
+description = ""
 date = "2011-06-14 13:00:05"
 author = "admin"
 tags = ["oauth","uc","新浪微博","浏览器"]

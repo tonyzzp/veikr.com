@@ -1,7 +1,7 @@
 ```toml
 title = "java中操作properties属性文件的简单教程"
 slug = "java_properties_example"
-desc = ""
+description = ""
 date = "2010-06-09 16:11:20"
 author = "admin"
 tags = ["java","properties","属性","教程"]

@@ -1,7 +1,7 @@
 ```toml
 title = "java中final,finally,finalize的区别"
 slug = "java_final_finally_finalize"
-desc = ""
+description = ""
 date = "2010-09-16 16:21:25"
 author = "admin"
 tags = ["final","finallize","finally","java","区别"]

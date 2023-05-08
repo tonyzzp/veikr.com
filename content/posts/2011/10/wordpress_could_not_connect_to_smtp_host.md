@@ -1,7 +1,7 @@
 ```toml
 title = "wordpress发邮件出现Could not connect to SMTP host的解决办法(转载)"
 slug = "wordpress_could_not_connect_to_smtp_host"
-desc = ""
+description = ""
 date = "2011-10-26 22:54:39"
 author = "admin"
 tags = ["fsockopen","mail","pfsockopen","smtp","wordpress","wp-mail-smtp","邮件"]

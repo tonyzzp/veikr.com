@@ -1,7 +1,7 @@
 ```toml
 title = "QQ概念版尝鲜"
 slug = "qq_concept"
-desc = ""
+description = ""
 date = "2010-04-23 01:43:23"
 author = "admin"
 tags = ["QQ","概念版","试用"]

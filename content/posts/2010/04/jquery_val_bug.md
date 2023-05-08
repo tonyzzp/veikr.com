@@ -1,7 +1,7 @@
 ```toml
 title = "发现jquery的val()方法的一个bug（待验证）"
 slug = "jquery_val_bug"
-desc = ""
+description = ""
 date = "2010-04-23 14:49:13"
 author = "admin"
 tags = ["bug","jquery"]

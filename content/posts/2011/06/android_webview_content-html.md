@@ -1,7 +1,7 @@
 ```toml
 title = "android中如何获得webView中的内容"
 slug = "android_webview_content-html"
-desc = ""
+description = ""
 date = "2011-06-13 18:08:01"
 author = "admin"
 tags = ["android","webview","例子","教程"]

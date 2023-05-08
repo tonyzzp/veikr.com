@@ -1,7 +1,7 @@
 ```toml
 title = "php文件上传 [function.move-uploaded-file]: failed to open stream 错误解决办法"
 slug = "php_upload_function_move_uploaded_file_failed_open_stream"
-desc = ""
+description = ""
 date = "2010-04-23 14:52:45"
 author = "admin"
 tags = ["php","文件上传","错误"]

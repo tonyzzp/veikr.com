@@ -1,7 +1,7 @@
 ```toml
 title = "jsp中获取路径的各种方法"
 slug = "jsp_get_path_method"
-desc = ""
+description = ""
 date = "2010-06-11 11:11:38"
 author = "admin"
 tags = ["java","jsp","request","路径"]

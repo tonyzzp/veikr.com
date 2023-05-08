@@ -1,7 +1,7 @@
 ```toml
 title = "读取apk程序包的内容"
 slug = "resolve_apk_file_reource"
-desc = ""
+description = ""
 date = "2012-02-21 13:39:53"
 author = "admin"
 tags = ["android","apk文件","applicationinfo","packageinfo","packagemanager","图标","读取"]

@@ -1,7 +1,7 @@
 ```toml
 title = "在使用豆瓣api时网址里含有汉字，显示wrong encoding错误"
 slug = "douban_api_character_wrong_encoding"
-desc = ""
+description = ""
 date = "2010-05-18 16:27:35"
 author = "admin"
 tags = ["api","http","java","豆瓣"]

@@ -1,7 +1,7 @@
 ```toml
 title = "jquery如何选择不含某属性的元素"
 slug = "java_select_none_attribute"
-desc = ""
+description = ""
 date = "2010-07-27 16:16:48"
 author = "admin"
 tags = ["javascript","jquery","元素","属性","选择器"]

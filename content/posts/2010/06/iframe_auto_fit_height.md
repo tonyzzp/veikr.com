@@ -1,7 +1,7 @@
 ```toml
 title = "iframe自适应高度(适合IE firefox  opera)"
 slug = "iframe_auto_fit_height"
-desc = ""
+description = ""
 date = "2010-06-08 14:30:59"
 author = "admin"
 tags = ["html","iframe","浏览器","自适应","高度"]

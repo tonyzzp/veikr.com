@@ -1,7 +1,7 @@
 ```toml
 title = "诺基亚手机程序关闭时出现kern exec 3 错误的解决办法"
 slug = "nokia_kern_exec_3"
-desc = ""
+description = ""
 date = "2010-08-31 11:58:48"
 author = "admin"
 tags = ["解决办法","诺基亚","错误"]

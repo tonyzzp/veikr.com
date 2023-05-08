@@ -1,7 +1,7 @@
 ```toml
 title = "在windows下使用gcc编译jni的简单教程"
 slug = "windows_gcc_jni"
-desc = ""
+description = ""
 date = "2012-07-29 21:12:06"
 author = "admin"
 tags = ["gcc","java","jni","mingw","教程"]

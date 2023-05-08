@@ -1,7 +1,7 @@
 ```toml
 title = "tomcat6+mysql连接池的简单实现(亲自试验通过)"
 slug = "tomcat6_mysql_connection_pool"
-desc = ""
+description = ""
 date = "2010-04-23 15:03:07"
 author = "admin"
 tags = ["mysql","tomcat","连接池"]

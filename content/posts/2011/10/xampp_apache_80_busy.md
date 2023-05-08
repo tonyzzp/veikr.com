@@ -1,7 +1,7 @@
 ```toml
 title = "解决xampp带的apache启动提示80端口被占用问题"
 slug = "xampp_apache_80_busy"
-desc = ""
+description = ""
 date = "2011-10-26 10:07:10"
 author = "admin"
 tags = ["80","apache","busy","xampp","端口","解决办法"]

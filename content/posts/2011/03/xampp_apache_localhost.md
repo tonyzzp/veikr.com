@@ -1,7 +1,7 @@
 ```toml
 title = "安装xampp后apache正常启动 但无法访问localhost的解决办法"
 slug = "xampp_apache_localhost"
-desc = ""
+description = ""
 date = "2011-03-19 16:32:52"
 author = "admin"
 tags = ["apache","localhost","php","winsock","xampp","无法打开","解决办法"]

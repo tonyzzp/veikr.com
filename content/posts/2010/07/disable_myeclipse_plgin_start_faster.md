@@ -1,7 +1,7 @@
 ```toml
 title = "禁用myeclipse的无用插件 关闭自动更新 加快启动速度"
 slug = "disable_myeclipse_plgin_start_faster"
-desc = ""
+description = ""
 date = "2010-07-16 10:19:53"
 author = "admin"
 tags = ["eclipse","java","myeclipse","关闭自动更新","启动","速度"]

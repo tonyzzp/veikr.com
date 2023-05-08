@@ -1,7 +1,7 @@
 ```toml
 title = "jhost邀请码(免费jsp空间)"
 slug = "jhost_invite_code_free_jsp"
-desc = ""
+description = ""
 date = "2010-06-13 18:34:45"
 author = "admin"
 tags = ["java","jhost","jsp","免费","空间","邀请码"]

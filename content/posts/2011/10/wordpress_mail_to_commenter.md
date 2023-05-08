@@ -1,7 +1,7 @@
 ```toml
 title = "终于搞定了wordpress的评论回复邮件通知插件"
 slug = "wordpress_mail_to_commenter"
-desc = ""
+description = ""
 date = "2011-10-29 15:23:57"
 author = "admin"
 tags = ["mail_to_commenter","wordpress","插件","解决办法","评论","通知","邮件"]

@@ -1,7 +1,7 @@
 ```toml
 title = "ie里的button标签的一个bug"
 slug = "ie_button_bug"
-desc = ""
+description = ""
 date = "2010-04-23 14:56:45"
 author = "admin"
 tags = ["bug","ie","javascript"]

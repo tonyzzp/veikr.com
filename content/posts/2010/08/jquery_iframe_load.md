@@ -1,7 +1,7 @@
 ```toml
 title = "使用jquery获取iframe加载完成事件"
 slug = "jquery_iframe_load"
-desc = ""
+description = ""
 date = "2010-08-25 11:50:24"
 author = "admin"
 tags = ["iframe","javascript","jquery","js","事件","加载"]

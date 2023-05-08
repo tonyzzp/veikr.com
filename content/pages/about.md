@@ -1,7 +1,7 @@
 ```toml
 title = "About PuGo"
 slug = "about"
-desc = "some words about pugo"
+description = "some words about pugo"
 date = "2016-03-24 12:24:00"
 author = "pugo"
 # set nav to active status when this page

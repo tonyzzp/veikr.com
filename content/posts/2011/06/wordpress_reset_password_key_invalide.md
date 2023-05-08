@@ -1,7 +1,7 @@
 ```toml
 title = "wordpress重置密码的时候'key似乎无效'的解决办法"
 slug = "wordpress_reset_password_key_invalide"
-desc = ""
+description = ""
 date = "2011-06-14 11:09:19"
 author = "admin"
 tags = ["key似乎无效","php","wordpress","取回","密码"]

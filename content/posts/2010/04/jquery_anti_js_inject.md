@@ -1,7 +1,7 @@
 ```toml
 title = "使用jquery对特殊字符进行转义,防止js注入"
 slug = "jquery_anti_js_inject"
-desc = ""
+description = ""
 date = "2010-04-23 14:44:17"
 author = "admin"
 tags = ["jquery","注入","转义"]

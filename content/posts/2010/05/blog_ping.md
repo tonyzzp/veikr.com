@@ -1,7 +1,7 @@
 ```toml
 title = "博客常用ping中心"
 slug = "blog_ping"
-desc = ""
+description = ""
 date = "2010-05-18 15:57:04"
 author = "admin"
 tags = ["ping","seo","博客","技巧"]

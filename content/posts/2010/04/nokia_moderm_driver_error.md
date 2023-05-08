@@ -1,7 +1,7 @@
 ```toml
 title = "诺基亚手机调制解调器驱动安装错误的解决办法"
 slug = "nokia_moderm_driver_error"
-desc = ""
+description = ""
 date = "2010-04-21 19:18:17"
 author = "admin"
 tags = ["driver","moderm","nokia"]

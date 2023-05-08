@@ -1,7 +1,7 @@
 ```toml
 title = "go语言的中'继承'"
 slug = "golang_extend"
-desc = ""
+description = ""
 date = "2012-07-21 20:17:13"
 author = "admin"
 tags = ["go","继承","语言"]

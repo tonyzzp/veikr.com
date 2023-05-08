@@ -1,7 +1,7 @@
 ```toml
 title = "java中使用dom4j读xml文件简单教程"
 slug = "java_dom4j_xml_simple_example"
-desc = ""
+description = ""
 date = "2010-04-23 15:04:56"
 author = "admin"
 tags = ["dom4j","java","xml"]

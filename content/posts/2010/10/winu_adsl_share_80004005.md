@@ -1,7 +1,7 @@
 ```toml
 title = "windows 7中启用宽带共享出现80004005 未知的错误  的解决办法"
 slug = "winu_adsl_share_80004005"
-desc = ""
+description = ""
 date = "2010-10-05 17:32:36"
 author = "admin"
 tags = ["win7","windows7","共享","宽带共享","未知错误","解决办法"]

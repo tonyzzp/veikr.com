@@ -1,7 +1,7 @@
 ```toml
 title = "java中字符与ASCII码值的转换"
 slug = "java_char_ascii"
-desc = ""
+description = ""
 date = "2010-06-09 16:16:11"
 author = "admin"
 tags = ["ascii","java","字符","转换"]

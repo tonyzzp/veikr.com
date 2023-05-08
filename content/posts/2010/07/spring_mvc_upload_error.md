@@ -1,7 +1,7 @@
 ```toml
 title = "使用spring  mvc上传文件的常见错误解决办法"
 slug = "spring_mvc_upload_error"
-desc = ""
+description = ""
 date = "2010-07-08 13:47:16"
 author = "admin"
 tags = ["java","mvc","spring","文件上传","解决办法","错误"]

@@ -1,7 +1,7 @@
 ```toml
 title = "android上传文件的同时并传递参数(php服务端源码)"
 slug = "android_uploadfile_parameter_php"
-desc = ""
+description = ""
 date = "2011-10-26 16:29:33"
 author = "admin"
 tags = ["httpclient","php","上传文件","参数"]

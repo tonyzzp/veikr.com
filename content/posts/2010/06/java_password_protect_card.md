@@ -1,7 +1,7 @@
 ```toml
 title = "java实现的简单密保卡功能"
 slug = "java_password_protect_card"
-desc = ""
+description = ""
 date = "2010-06-09 21:22:33"
 author = "admin"
 tags = ["java","密保卡"]

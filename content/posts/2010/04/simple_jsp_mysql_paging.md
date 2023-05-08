@@ -1,7 +1,7 @@
 ```toml
 title = "以最简单的方式实现jsp+mysql分页"
 slug = "simple_jsp_mysql_paging"
-desc = ""
+description = ""
 date = "2010-04-23 15:01:28"
 author = "admin"
 tags = ["jsp","mysql","分页"]

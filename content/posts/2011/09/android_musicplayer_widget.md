@@ -1,7 +1,7 @@
 ```toml
 title = "Android音乐播放widget的简单事例(附源代码)"
 slug = "android_musicplayer_widget"
-desc = ""
+description = ""
 date = "2011-09-03 17:57:17"
 author = "admin"
 tags = ["android","appwidget","mediaplayer","service","源代码","音乐播放"]

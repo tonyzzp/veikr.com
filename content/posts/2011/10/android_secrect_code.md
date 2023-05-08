@@ -1,7 +1,7 @@
 ```toml
 title = "监听android的拨号事件(android secret code)"
 slug = "android_secrect_code"
-desc = ""
+description = ""
 date = "2011-10-25 19:43:28"
 author = "admin"
 tags = ["android","android secret code","拨号盘","监听"]

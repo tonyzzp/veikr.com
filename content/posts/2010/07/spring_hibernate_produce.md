@@ -1,7 +1,7 @@
 ```toml
 title = "spring+hibernate最简单入门教程(事例下载)"
 slug = "spring_hibernate_produce"
-desc = ""
+description = ""
 date = "2010-07-07 17:30:51"
 author = "admin"
 tags = ["hibernate","java","mvc","spring","下载","事例","教程"]

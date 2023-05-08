@@ -1,7 +1,7 @@
 ```toml
 title = "java中使用cipher进行信息加密解密的简单教程"
 slug = "java_cipher_encrypt"
-desc = ""
+description = ""
 date = "2010-06-24 16:17:45"
 author = "admin"
 tags = ["cipher","java","加密","教程","解密"]

@@ -1,7 +1,7 @@
 ```toml
 title = "让桌面图标文字背景透明的解决办法"
 slug = "desktop_icon_text_transparent"
-desc = ""
+description = ""
 date = "2010-08-18 16:23:24"
 author = "admin"
 tags = ["windows","xp","图标","桌面","背景","透明"]

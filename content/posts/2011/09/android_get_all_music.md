@@ -1,7 +1,7 @@
 ```toml
 title = "得到所有音乐"
 slug = "android_get_all_music"
-desc = ""
+description = ""
 date = "2011-09-07 11:42:29"
 author = "admin"
 tags = ["contentprovider","contentresolver","音乐"]

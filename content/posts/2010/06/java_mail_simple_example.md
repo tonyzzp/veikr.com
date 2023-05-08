@@ -1,7 +1,7 @@
 ```toml
 title = "javamail发送邮件的简单事例"
 slug = "java_mail_simple_example"
-desc = ""
+description = ""
 date = "2010-06-10 16:53:03"
 author = "admin"
 tags = ["java","javamail","mail","教程"]

@@ -1,7 +1,7 @@
 ```toml
 title = "用java输出一个菱形"
 slug = "java_rhombus"
-desc = ""
+description = ""
 date = "2010-06-09 15:35:28"
 author = "admin"
 tags = ["java","图形","菱形","输出"]

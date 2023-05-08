@@ -1,7 +1,7 @@
 ```toml
 title = "libgdx中异步从网络加载图片"
 slug = "libgdx_load_texture_network_async"
-desc = ""
+description = ""
 date = "2012-03-30 23:01:37"
 author = "admin"
 tags = ["android","libgdx","texture","游戏","网络"]

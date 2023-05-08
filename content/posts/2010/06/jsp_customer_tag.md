@@ -1,7 +1,7 @@
 ```toml
 title = "jsp中的自定义标签的简单教程"
 slug = "jsp_customer_tag"
-desc = ""
+description = ""
 date = "2010-06-04 18:14:53"
 author = "admin"
 tags = ["java","jsp","tag","教程","标签","自定义"]

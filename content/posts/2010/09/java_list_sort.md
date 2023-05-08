@@ -1,7 +1,7 @@
 ```toml
 title = "java中怎么样对list进行排序"
 slug = "java_list_sort"
-desc = ""
+description = ""
 date = "2010-09-17 15:48:41"
 author = "admin"
 tags = ["java","list","排序","教程"]

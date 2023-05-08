@@ -1,7 +1,7 @@
 ```toml
 title = "ANDROID应用内截图的代码实现"
 slug = "android_screen_shot"
-desc = ""
+description = ""
 date = "2012-02-19 16:31:18"
 author = "admin"
 tags = ["android","screen shot","截图"]

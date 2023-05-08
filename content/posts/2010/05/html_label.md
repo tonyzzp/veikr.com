@@ -1,7 +1,7 @@
 ```toml
 title = "html中的label标签的秒用"
 slug = "html_label"
-desc = ""
+description = ""
 date = "2010-05-01 14:13:36"
 author = "admin"
 tags = ["html","label"]

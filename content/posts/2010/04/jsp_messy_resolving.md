@@ -1,7 +1,7 @@
 ```toml
 title = "jsp部分乱码的解决办法"
 slug = "jsp_messy_resolving"
-desc = ""
+description = ""
 date = "2010-04-23 14:59:32"
 author = "admin"
 tags = ["jsp","乱码","汉字"]

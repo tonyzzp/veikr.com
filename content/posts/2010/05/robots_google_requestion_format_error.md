@@ -1,7 +1,7 @@
 ```toml
 title = "robots.txt文件在google中多一个问号，提示格式有误"
 slug = "robots_google_requestion_format_error"
-desc = ""
+description = ""
 date = "2010-05-22 11:50:23"
 author = "admin"
 tags = ["google","robots","seo"]

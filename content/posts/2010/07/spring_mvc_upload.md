@@ -1,7 +1,7 @@
 ```toml
 title = "使用spring  mvc上传文件的简单教程"
 slug = "spring_mvc_upload"
-desc = ""
+description = ""
 date = "2010-07-08 10:41:53"
 author = "admin"
 tags = ["java","mvc","spring","教程","文件","文件上传"]

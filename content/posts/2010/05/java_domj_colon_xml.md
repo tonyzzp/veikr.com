@@ -1,7 +1,7 @@
 ```toml
 title = "在java中使用dom4j解析带冒号节点的xml文件"
 slug = "java_domj_colon_xml"
-desc = ""
+description = ""
 date = "2010-05-11 11:15:39"
 author = "admin"
 tags = ["dom4j","java","xml"]

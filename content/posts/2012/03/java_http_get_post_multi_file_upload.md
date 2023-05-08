@@ -1,7 +1,7 @@
 ```toml
 title = "java的http请求(get/post/上传文件)(附源码下载)"
 slug = "java_http_get_post_multi_file_upload"
-desc = ""
+description = ""
 date = "2012-03-24 12:22:12"
 author = "admin"
 tags = ["get","http","java","post","下载","文件上传","源码"]

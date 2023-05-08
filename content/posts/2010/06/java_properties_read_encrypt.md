@@ -1,7 +1,7 @@
 ```toml
 title = "java中读取properties配置文件,并完成简单的加密解密"
 slug = "java_properties_read_encrypt"
-desc = ""
+description = ""
 date = "2010-06-09 17:53:11"
 author = "admin"
 tags = ["java","properties","加密","文件","解密"]

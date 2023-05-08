@@ -1,7 +1,7 @@
 ```toml
 title = "不使用struts标签显示表单验证的错误信息"
 slug = "none_struts_validate_error_message"
-desc = ""
+description = ""
 date = "2010-06-28 19:08:10"
 author = "admin"
 tags = ["actionerror","actionmessage","fielderror","java","struts2","标签","验证"]

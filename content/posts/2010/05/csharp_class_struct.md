@@ -1,7 +1,7 @@
 ```toml
 title = "c# 中class 和struct的区别"
 slug = "csharp_class_struct"
-desc = ""
+description = ""
 date = "2010-05-23 20:51:14"
 author = "admin"
 tags = ["c#","class","struct","区别"]

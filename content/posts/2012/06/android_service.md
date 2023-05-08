@@ -1,7 +1,7 @@
 ```toml
 title = "android中service的简单实现"
 slug = "android_service"
-desc = ""
+description = ""
 date = "2012-06-10 15:56:43"
 author = "admin"
 tags = ["android","BinderProxy","ClassCastException","IBinder","service","服务"]

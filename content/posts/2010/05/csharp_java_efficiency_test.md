@@ -1,7 +1,7 @@
 ```toml
 title = "c#与java运行效率的不科学测试"
 slug = "csharp_java_efficiency_test"
-desc = ""
+description = ""
 date = "2010-05-25 14:32:10"
 author = "admin"
 tags = ["c#","java","效率","测试"]

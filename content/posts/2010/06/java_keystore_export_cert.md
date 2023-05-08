@@ -1,7 +1,7 @@
 ```toml
 title = "java中从keystore里导出证书"
 slug = "java_keystore_export_cert"
-desc = ""
+description = ""
 date = "2010-06-25 10:07:01"
 author = "admin"
 tags = ["certificate","java","keystore","导出","证书","证书库"]
