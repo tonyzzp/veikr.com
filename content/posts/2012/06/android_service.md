@@ -12,7 +12,7 @@ tags = ["android","BinderProxy","ClassCastException","IBinder","service","服务
 废话不多说，直接上代码比较好。
 
 一、首先你需要有个类，继承自service。
-<pre class="brush:java">package zzp.test.service;
+```package zzp.test.service;
 
 import android.app.Service;
 import android.content.Intent;
@@ -82,7 +82,7 @@ public class PushService extends Service {
 		System.out.println("onUnbind");
 		return super.onUnbind(intent);
 	}
-}</pre>
+}```
 onCreate:在服务首次创建时调用。
 
 onDestroy:在服务被销毁时调用。
@@ -108,7 +108,7 @@ onUnBind:使用unbindService时调用。unbindService只能在服务已经绑定
 在service中onBind方法返回一个IBinder，用此来与服务进行通信交互。所以服务的一般用法是，在activity中先startServie来启用服务，然后使用bindService来获得IBinder，与服务交互。activity退出时必须调用unBindService,但服务还不会停止，当你不再服务此服务时，调用stopService来停止服务。
 
 &nbsp;
-<pre class="brush:java">package zzp.test.service;
+```package zzp.test.service;
 
 import zzp.test.service.PushService.PushBinder;
 import android.app.Activity;
@@ -212,11 +212,11 @@ public class TestServiceActivity extends Activity implements OnClickListener {
 			System.out.println(o);
 		}
 	}
-}</pre>
+}```
 &nbsp;
 
 另外，你需要在manifest中配置一下服务，这一句话就够了。
-<pre class="brush:xml">&lt;service android:name="PushService"&gt;</pre>
+```&lt;service android:name="PushService"&gt;```
 &nbsp;
 
 其实我还有些疑问，我这里的onServiceDisconnected从来没被调用过，onRebind也从来没被调用过，还不明白为什么，有知道的朋友麻烦指教一下。

@@ -18,7 +18,7 @@ tags = ["android","android secret code","拨号盘","监听"]
 还是直接贴代码来的直接。
 
 <span style="color: #0000ff;">写一个广播接收器</span>
-<pre>package zzp.test.calllistener;
+```package zzp.test.calllistener;
 
 import android.content.BroadcastReceiver;
 
@@ -46,7 +46,7 @@ context.startActivity(i);
 
 }
 
-}</pre>
+}```
 注：用户在拨号盘输入*#*#xxxx#*#*后会发送一个广播
 
 action是android.provider.Telephony.SECRET_CODE
@@ -60,14 +60,14 @@ data是 android_secret_code://xxxx
 &nbsp;
 
 <span style="color: #0000ff;">然后部署reciever就行了</span>
-<pre>&lt;receiver android:name="Listener"&gt;
+```&lt;receiver android:name="Listener"&gt;
 	&lt;intent-filter&gt;
 		&lt;action android:name="android.provider.Telephony.SECRET_CODE" /&gt;
 		&lt;data android:scheme="android_secret_code" /&gt;
 	&lt;/intent-filter&gt;
-&lt;/receiver&gt;</pre>
+&lt;/receiver&gt;```
 完成，这样你就可以在用户僌*#*#xxxx#*#*的时候收到广播了，
 中间的XXXX也可以包含*或者#的
 
 下面符上全部代码
-<a href="http://veikr.com/wp-content/uploads/2011/10/calllistener.zip">源码下载</a>
+<a href="http://veikr.com/assets/wp-content/uploads/2011/10/calllistener.zip">源码下载</a>

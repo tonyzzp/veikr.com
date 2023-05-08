@@ -17,7 +17,7 @@ tags = ["android","appwidget","mediaplayer","service","源代码","音乐播放"
 
 4.通过第三方库来读取mp3文件的id3标签(歌曲名、歌手名、专辑名等)
 
-<a href="http://veikr.com/wp-content/uploads/2011/09/musicWidget.png"><img class="aligncenter size-full wp-image-238" title="音乐播放器的AppWidget" src="http://veikr.com/wp-content/uploads/2011/09/device.png" alt="音乐播放器的AppWidget效果图" width="480" height="230" /></a>
+<a href="http://veikr.com/assets/wp-content/uploads/2011/09/musicWidget.png"><img class="aligncenter size-full wp-image-238" title="音乐播放器的AppWidget" src="http://veikr.com/assets/wp-content/uploads/2011/09/device.png" alt="音乐播放器的AppWidget效果图" width="480" height="230" /></a>
 
 <!--more-->
 
@@ -26,7 +26,7 @@ tags = ["android","appwidget","mediaplayer","service","源代码","音乐播放"
 一、widget的layout文件
 
 普通的layout文件，同样存入在layout文件夹下
-<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+```&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:orientation="vertical"&gt;
@@ -46,17 +46,17 @@ tags = ["android","appwidget","mediaplayer","service","源代码","音乐播放"
 			android:layout_height="wrap_content" android:layout_width="wrap_content"
 			android:layout_weight="1.0" android:id="@+id/next" /&gt;
 	&lt;/LinearLayout&gt;
-&lt;/RelativeLayout&gt;</pre>
+&lt;/RelativeLayout&gt;```
 二、widget的配置文件
 
 右键-new-androi xml file，选择appWidget provider，输入文件名，即可。
 
 此文件会存在于xml文件夹下
-<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+```&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
 	android:minWidth="320px" android:updatePeriodMillis="3600000"
 	android:initialLayout="@layout/widget" android:minHeight="150px"&gt;
-&lt;/appwidget-provider&gt;</pre>
+&lt;/appwidget-provider&gt;```
 属性很简单， 就不用解释了
 
 &nbsp;
@@ -68,7 +68,7 @@ onEnable方法在第一个widget被添加到桌面时调用，我们在这里启
 onDisable方法在全部widget删除后调用，我们在这里关闭服务
 onUpdate方法里我们对widget的各控件设置监听
 onReceiver方法其实就是broadCastReceiver里的onReceiver，在收到广播时我们更新widget(比如显示歌名)
-<pre class="brush:java">package zzp.musicwidget;
+```package zzp.musicwidget;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -141,14 +141,14 @@ super.onDisabled(context);
 Intent intent = new Intent(context, MusicService.class);
 context.stopService(intent);
 }
-}</pre>
+}```
 在onUpdate中对控件设置了监听，当点击按钮(播放、下一曲、上一曲)后发送广播。而我们的service中会接收这些广播，然后执行相应的操作。
 service中的的某些操作(播放、暂停、换歌)执行后，也会发送广播，这时appWidgetProvider收到广播后调widget界面(显示歌名、变换图标)
 
 &nbsp;
 四、音乐播放的service
 这个类中接收widgetProvider发送的广播，然后进行相关操作(播放、暂停、下一曲、上一曲)
-<pre class="brush:java">package zzp.musicwidget;
+```package zzp.musicwidget;
 
 import java.io.File;
 import java.io.IOException;
@@ -345,7 +345,7 @@ Intent i = new Intent("zzp.musicwidget.widget.title");
 i.putExtra(Intent.EXTRA_TEXT, title);
 sendBroadcast(i);
 }
-}</pre>
+}```
 onStart中初始化音乐(音乐文件放在/sdcard/veikrmusic目录下，必须为mp3)，注册广播接收器，以便接收widget发送的命令
 接收到widget发送的广播后进行相关操作，操作完成后再发送广播通知widget更新界面
 这里面用到了一个第三方库来解析mp3文件的id3标签，文章末尾附下载
@@ -353,7 +353,7 @@ onStart中初始化音乐(音乐文件放在/sdcard/veikrmusic目录下，必须
 &nbsp;
 
 五、代码都写好了，剩下的就是配置了
-<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+```&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
 package="zzp.musicwidget" android:versionCode="1" android:versionName="1.0"&gt;
 &lt;uses-sdk android:minSdkVersion="7" /&gt;
@@ -370,7 +370,7 @@ package="zzp.musicwidget" android:versionCode="1" android:versionName="1.0"&gt;
 &lt;/receiver&gt;
 &lt;service android:name="MusicService"&gt;&lt;/service&gt;
 &lt;/application&gt;
-&lt;/manifest&gt;</pre>
+&lt;/manifest&gt;```
 OK！大功告成
 算不上什么教程，都是在粘源代码，大家都指教，高手莫笑。
 
@@ -381,6 +381,6 @@ ps:好几个月没写博客了
 
 下载：
 
-<a href="http://veikr.com/wp-content/uploads/2011/09/MusicWidget.apk_.zip">MusicWidget.apk 安装包</a>
+<a href="http://veikr.com/assets/wp-content/uploads/2011/09/MusicWidget.apk_.zip">MusicWidget.apk 安装包</a>
 
-<a href="http://veikr.com/wp-content/uploads/2011/09/MusicWidget.zip">MusicWidget.zip 源码</a>
+<a href="http://veikr.com/assets/wp-content/uploads/2011/09/MusicWidget.zip">MusicWidget.zip 源码</a>

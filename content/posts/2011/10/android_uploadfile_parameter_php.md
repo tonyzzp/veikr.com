@@ -18,7 +18,7 @@ tags = ["httpclient","php","上传文件","参数"]
 <!--more-->
 
 &nbsp;
-<pre>&lt;?php
+```&lt;?php
 //echo $_FILES["pic"]["name"];
 //echo $_FILES["pic"]["type"];
 //echo $_FILES["pic"]["size"];
@@ -30,6 +30,6 @@ if($_FILES["pic"]["size"]&gt;512*1024){
 	echo $_FILES["file"]["name"];
 	echo $_POST["name"];
 }
-?&gt;</pre>
-<pre></pre>
-<pre></pre>
+?&gt;```
+``````
+``````

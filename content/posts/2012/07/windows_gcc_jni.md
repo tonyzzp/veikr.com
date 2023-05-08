@@ -16,7 +16,7 @@ tags = ["gcc","java","jni","mingw","教程"]
 <span style="color: #0000ff;">2、编写JAVA文件</span>。
 
 写个最简单的：
-<pre class="brush:java">public class Test {
+```public class Test {
 
 	static{
 		System.loadLibrary("lib");
@@ -27,7 +27,7 @@ tags = ["gcc","java","jni","mingw","教程"]
 	public static void main (String args[]) {
 		print(3);
 	}
-}</pre>
+}```
 然后编译java文件 javac Test.java
 
 <!--more-->
@@ -52,13 +52,13 @@ JNIEXPORT void JNICALL Java_Test_print
 这里简单说一下c的方法名命名规则是Java_packagename_Classname_method
 
 要实现的就是这个方法了。
-<pre class="brush:cpp">#include &lt;stdio.h&gt;
+```#include &lt;stdio.h&gt;
 #include &lt;jni.h&gt;
 #include "Test.h"
 
 JNIEXPORT void JNICALL Java_Test_print(JNIEnv *env, jclass jthiz,jint a){
 	printf("Hello JNI!%d\n",a);
-}</pre>
+}```
 这里简单说一下，include的第一个是c的标准输入输出库，第2个是jni库，这个文件是在java/include里的，第3个就是自己刚才生成的头文件了，注意一定要用“”，不是用&lt;&gt;
 
 方法的前2个参数是固定的，不用管。

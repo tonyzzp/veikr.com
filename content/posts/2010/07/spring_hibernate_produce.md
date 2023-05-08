@@ -25,4 +25,4 @@ spring+hibernate整合。
 插入新数据
 查询数据
 
-<a href="/upload_old/2010/7/springhibernate.zip" target="_blank">springhibernate.zip</a>
+<a href="/assets/UPLOAD_OLD/2010/7/springhibernate.zip" target="_blank">springhibernate.zip</a>

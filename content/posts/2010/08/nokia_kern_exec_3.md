@@ -21,4 +21,4 @@ tags = ["解决办法","诺基亚","错误"]
 本人试过，通过第2个方法完美解决，也有很多人通过第1个方法解决问题的。
 注：删除那个文件需要XX手机。
 
-<a href="http://veikr.com/UPLOAD_old/2010/8/pips1.6.sis" target="_blank">pips1.6.sis</a>
+<a href="http://veikr.com/assets/UPLOAD_OLD/2010/8/pips1.6.sis" target="_blank">pips1.6.sis</a>

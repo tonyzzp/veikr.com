@@ -15,9 +15,9 @@ wp-mail-smtp这个插件不错，但可能很多人都遇到过 could not connec
 
 <!--more-->
 其实是主机禁用了fsockopen()函数，你可以写一个phpinfo看一下是否禁用了这个函数。
-<pre class="brush:php">&lt;?php
+```&lt;?php
 phpinfo();
-?&gt;</pre>
+?&gt;```
 然后你可以在disable_functions一栏看到fsockopen，果然被禁用。
 解决办法：
 <span style="color: #ff0000;">用pfsockopen()函数直接替换掉 fsockopen()</span>

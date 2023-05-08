@@ -18,10 +18,10 @@ tags = ["android","apk文件","applicationinfo","packageinfo","packagemanager","
 <div>方法如下：</div>
 <div></div>
 <div>
-<pre class="brush:java">Resources res=getResources();
+```Resources res=getResources();
 AssetManager asm=new AssetManager();//隐藏api
 asm.addAssetPath(String apkfilePath);//隐藏api
-res=new Resources(asm,res.getDisplayMetrics(),res.getConfiguration());//隐藏api</pre>
+res=new Resources(asm,res.getDisplayMetrics(),res.getConfiguration());//隐藏api```
 </div>
 <div></div>
 <div>然后使用res.getString(int resId)   res.getDrawable(int resId)即可得到apk文件内部的资源。(此处资源id可通过上面的公开方法得到)</div>
@@ -32,7 +32,7 @@ res=new Resources(asm,res.getDisplayMetrics(),res.getConfiguration());//隐藏ap
 <div></div>
 <div>
 <div>
-<pre class="brush:java">Class asm_cls = Class.forName("android.content.res.AssetManager");
+```Class asm_cls = Class.forName("android.content.res.AssetManager");
 Object asm_obj = asm_cls.getDeclaredConstructor((Class[]) null).newInstance((Class[]) null);
 asm_obj.getClass()	.getDeclaredMethod("addAssetPath", new Class[] { String.class })
 				.invoke(asm_obj, new Object[] { filePath });
@@ -44,7 +44,7 @@ res = Resources.class.getDeclaredConstructor(
     .newInstance(new Object[] { asm_obj, 
                                                     res.getDisplayMetrics(),
 						    res.getConfiguration() });
-return res;</pre>
+return res;```
 </div>
 <div></div>
 </div>

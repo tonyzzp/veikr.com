@@ -8,6 +8,9 @@ tags = ["get","http","java","post","下载","文件上传","源码"]
 ```
 
 使用标准http协议实现，(HttpUrlConneciton)，不使用第三方包
+
+<!--more-->
+
 <div></div>
 <div><span style="color: #ff0000;">一、get请求</span></div>
 <div>URL url=new URL("http://www.baidu.com/s?wd=abcdefg");</div>
@@ -77,4 +80,4 @@ tags = ["get","http","java","post","下载","文件上传","源码"]
 
 </div>
 <div>源码下载：</div>
-<div><a href="http://veikr.com/wp-content/uploads/2012/03/zzpCommon.zip">zzpCommon</a></div>
+<div><a href="http://veikr.com/assets/wp-content/uploads/2012/03/zzpCommon.zip">zzpCommon</a></div>

@@ -86,7 +86,7 @@ OK，完工，很简单的。
 下面粘上全部代码，源码包下面有下载。
 
 &nbsp;
-<pre class="brush:java">package zzp.t.uploadfile;
+```package zzp.t.uploadfile;
 
 import java.io.File;
 import java.io.IOException;
@@ -158,5 +158,5 @@ public class MainActivity extends Activity {
 			}
 		}.execute();
 	}
-}</pre>
-<a href="http://veikr.com/wp-content/uploads/2011/09/TestUploadFile.zip">源码包下载TestUploadFile</a>
+}```
+<a href="http://veikr.com/assets/wp-content/uploads/2011/09/TestUploadFile.zip">源码包下载TestUploadFile</a>

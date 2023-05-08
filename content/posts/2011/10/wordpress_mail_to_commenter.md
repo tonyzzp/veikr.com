@@ -58,8 +58,8 @@ return @wp_mail($to, $subject, $message,$headers);
 找到wp-includes/pluggable.php文件，找到function wp_mail()函数
 
 然后里面有一句
-<pre><span style="color: #008000;">if ( !isset( $from_name ) )</span>
-<span style="color: #008000;"> $from_name = 'veikr';</span></pre>
+```<span style="color: #008000;">if ( !isset( $from_name ) )</span>
+<span style="color: #008000;"> $from_name = 'veikr';</span>```
 这里就是设置默认发送人姓名的。
 改成你想要的就行了(中文会乱码)
 

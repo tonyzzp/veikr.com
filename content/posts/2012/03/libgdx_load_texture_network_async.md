@@ -22,7 +22,7 @@ tags = ["android","libgdx","texture","游戏","网络"]
 大概代码如下：
 
 <span style="color: #339966;">一、从url读取byte[]</span>
-<pre class="brush:java">InputStream is=new URL(surl).openStream();
+```InputStream is=new URL(surl).openStream();
 ByteArrayOutputStream out = new ByteArrayOutputStream();
 int length = 0;
 byte[] bytes = new byte[1024];
@@ -31,21 +31,21 @@ while ((length = is.read(bytes)) != -1) {
 }
 is.close();
 out.flush();
-byte[] rtn = out.toByteArray();</pre>
+byte[] rtn = out.toByteArray();```
 <span style="color: #339966;">二、使用byte[]生成一个pixmap</span>
-<pre class="brush:java">Pixmap pixmap = new Pixmap(bytes, 0, bytes.length);</pre>
+```Pixmap pixmap = new Pixmap(bytes, 0, bytes.length);```
 <span style="color: #339966;">三、将pixmap画到texture上</span>
-<pre class="brush:java">int width = pixmap.getWidth();
+```int width = pixmap.getWidth();
 int height = pixmap.getHeight();
 int preferWidth = MathUtils.nextPowerOfTwo(width);
 int preferHeight = MathUtils.nextPowerOfTwo(height);
 Texture texture = new Texture(preferWidth,preferHeight,pixmap.getFormat());
 texture.draw(pixmap, 0, 0);
-pixmap.dispose();</pre>
+pixmap.dispose();```
 <span style="color: #339966;">四、构造textureRegion</span>
 
 &nbsp;
-<pre class="brush:java">TextureRegion region=new TextureRegioin(texture,0,0,width,heigth);</pre>
+```TextureRegion region=new TextureRegioin(texture,0,0,width,heigth);```
 大功告成！
 
 &nbsp;
@@ -63,7 +63,7 @@ pixmap.dispose();</pre>
 所以必须这样。
 
 &nbsp;
-<pre class="brush:java">
+```
 TextureRegion region=new TextureRegion(new Texture(1,1,Format.RGBA8888));
 loadTextureRegionFromUrl(region,"http://sss.com/asdf.png");
 
@@ -104,7 +104,7 @@ new Thread() {
 		}
 	};
 }.start();
-}</pre>
+}```
 &nbsp;
 
 最后还有要注意的，<span style="color: #ff9900;">libgdx只支持jpb,png,bmp格式图片，gif什么的就不行了。</span>

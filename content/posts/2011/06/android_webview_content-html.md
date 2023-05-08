@@ -62,4 +62,4 @@ javascript:alert(document.body.innerHTML);
 
 这个也是用到了这个道理。
 
-下载代码 <a href="http://veikr.com/wp-content/uploads/2011/06/WebViewDemo.zip">WebViewDemo</a>
+下载代码 <a href="http://veikr.com/assets/wp-content/uploads/2011/06/WebViewDemo.zip">WebViewDemo</a>
