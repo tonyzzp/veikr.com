@@ -1,8 +1,17 @@
 <html>
+
+<head>
+    <title>{{.current.Title}}</title>
+</head>
+
 <body>
-{{if .page.Title}}
-<center><h1>{{.Page.Title}}</h1></center>
-{{end}}
-{{HTML .page.Content}}
+    {{if .page.Title}}
+    <center>
+        <h1>{{.Page.Title}}</h1>
+    </center>
+    {{end}}
+
+    {{HTML .page.Content}}
 </body>
+
 </html>
