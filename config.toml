@@ -1,7 +1,7 @@
 [site]
-  title = "PuGo"
+  title = "veikr.com"
   sub_title = "a simple static site generator"
-  base = "http://localhost:18080"
+  base = "https://veikr.com"
   description = "a simple static site generator with markdown support"
   keywords = ["site", "generator", "markdown"]
 
@@ -41,14 +41,14 @@
   website = ""
   bio = "user bio"
   avatar = ""
-  use_gravatar = true
+  use_gravatar = false
   slug = "/author/admin/"
   [author.social]
     github = "https://github.com/admin"
 
 [extension]
   [extension.feed]
-    enabled = true
+    enabled = false
     limit_nums = 10
     link = "/atom.xml"
   [extension.sitemap]
