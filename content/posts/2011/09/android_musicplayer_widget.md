@@ -19,7 +19,9 @@ tags = ["android","appwidget","mediaplayer","service","源代码","音乐播放"
 
 <a href="http://veikr.com/wp-content/uploads/2011/09/musicWidget.png"><img class="aligncenter size-full wp-image-238" title="音乐播放器的AppWidget" src="http://veikr.com/wp-content/uploads/2011/09/device.png" alt="音乐播放器的AppWidget效果图" width="480" height="230" /></a>
 
-<!--more-->开始工作吧。
+<!--more-->
+
+开始工作吧。
 
 一、widget的layout文件
 

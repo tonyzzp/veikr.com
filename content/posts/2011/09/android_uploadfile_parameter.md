@@ -29,7 +29,9 @@ httpResponse，服务器的返回
 
 OK，开始吧
 
-<!--more-->首先创建HttpPost对象
+<!--more-->
+
+首先创建HttpPost对象
 
 HttpPost post=new HttpPost("http://veikr.com/myupload/upload.php");
 

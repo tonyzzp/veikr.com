@@ -11,7 +11,9 @@ tags = ["mail_to_commenter","wordpress","插件","解决办法","评论","通知
 
 这次下决心要把问题搞好，算起来总花了一天多时间。把经验分享一下，免得朋友们走弯路。
 
-<!--more-->wordpress自带邮件功能，但是通过php的mail()函数的，而大多数主机都禁用了mail()函数。(其实我的主机是没有禁用这个函数的，但使用mail函数发的邮件都会被标记为来源不可信任，而且很容易被当成垃圾邮件直接删掉)。所以还是装个smtp的插件比较好。
+<!--more-->
+
+wordpress自带邮件功能，但是通过php的mail()函数的，而大多数主机都禁用了mail()函数。(其实我的主机是没有禁用这个函数的，但使用mail函数发的邮件都会被标记为来源不可信任，而且很容易被当成垃圾邮件直接删掉)。所以还是装个smtp的插件比较好。
 
 关于smtp插件的问题，可以看<a title="wordpress发邮件出现Could not connect to SMTP host的解决办法(转载)" href="http://veikr.com/201110/wordpress_could_not_connect_to_smtp_host.html">这篇文章</a>  (可能很多朋友试过几乎所有的插件，试过网上几乎所有的方法都没解决问题，但也许这篇文章正是你想要的，因为smtp插件不生效的原因可能是个很冷门的原因)
 
